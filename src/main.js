@@ -1,6 +1,6 @@
 // main.js
 import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import './styles/fonts.css'
 import './styles/app.style-config.css'
 import './Header/config/header.style-config.css'
@@ -14,7 +14,7 @@ import App from './App.vue'
 
 // Роутер — добавляй страницы сюда по мере создания
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes: [
         { path: '/',                   component: () => import('./Home/view/HomePageView.vue') },
         { path: '/programs/:id',       component: () => import('./Home/Details/view/HomeDetailsPageView.vue') },
