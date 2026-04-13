@@ -1,0 +1,13 @@
+:root {
+    --color--footer-bg: linear-gradient(180deg, #8f25c7 0%, #8c21c4 100%);
+    --color--footer-surface: #191919;
+    --color--footer-text: rgba(255, 255, 255, 0.78);
+    --color--footer-title: #ffffff;
+    --color--footer-muted: rgba(255, 255, 255, 0.42);
+    --color--footer-accent: #ffffff;
+    --color--footer-social: rgba(255, 255, 255, 0.88);
+
+    --font-size--footer-title: 22px;
+    --font-size--footer-link: 18px;
+    --font-size--footer-bottom: 13px;
+}

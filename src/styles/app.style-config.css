@@ -1,0 +1,11 @@
+:root {
+    --spacing--page-x: 50px;
+    --spacing--page-x-mobile: 50px;
+    --size--header-topbar-height: 37px;
+
+    --color--accent: #c9a96e;
+    --color--text-primary: #181513;
+    --color--text-muted: #5e554d;
+    --color--text-soft: #8b7e72;
+    --color--surface: #fcfaf5;
+}

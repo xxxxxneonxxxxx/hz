@@ -1,0 +1,24 @@
+:root {
+    --color--header-accent: rgb(124, 41, 170);
+    --color--header-topbar: rgb(87,27,149);
+    --color--header-navbar: rgba(124, 41, 170, 1);
+    --color--header-text: #f8f4ec;
+    --color--header-text-dark: #171412;
+
+    --font-size--header-topbar-contact: 12px;
+    --font-size--header-topbar-contact-mobile: 11px;
+    --font-size--header-navbar-link: 14px;
+    --font-size--header-navbar-mobile-link: 15px;
+
+    --size--header-topbar-height: 52px;
+    --size--header-navbar-height: 108px;
+    --size--header-navbar-height-scrolled: 84px;
+    --size--header-logo-height: 72px;
+    --size--header-logo-height-scrolled: 56px;
+    --size--header-offset: calc(var(--size--header-topbar-height) + var(--size--header-navbar-height));
+    --size--header-current-offset: var(--size--header-offset);
+}
+
+html.header-scrolled {
+    --size--header-current-offset: var(--size--header-navbar-height-scrolled);
+}
