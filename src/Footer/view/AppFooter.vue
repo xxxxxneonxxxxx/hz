@@ -2,14 +2,19 @@
   <footer class="App-footer">
     <div class="footer__main">
       <div class="footer__container">
-        <a :href="logo.href" class="footer__logo">
+        <component
+          :is="isInternalLink(logo.href) ? RouterLink : 'a'"
+          :to="isInternalLink(logo.href) ? logo.href : undefined"
+          :href="isInternalLink(logo.href) ? undefined : logo.href"
+          class="footer__logo"
+        >
           <img
               :src="logo.src"
               :alt="logo.alt"
               :width="logo.width"
               :height="logo.height"
           />
-        </a>
+        </component>
 
         <div class="footer__columns">
           <div v-for="col in columns" :key="col.id" class="footer__col">
@@ -23,15 +28,17 @@
                 class="footer__list-item"
               >
                 <template v-if="!item.spacer">
-                  <a
+                  <component
                     v-if="item.href"
-                    :href="item.href"
+                    :is="isInternalLink(item.href) && !item.external ? RouterLink : 'a'"
+                    :to="isInternalLink(item.href) && !item.external ? item.href : undefined"
+                    :href="isInternalLink(item.href) && !item.external ? undefined : item.href"
                     :target="item.external ? '_blank' : undefined"
                     :rel="item.external ? 'noopener noreferrer' : undefined"
                     class="footer__link"
                   >
                     {{ item.text }}
-                  </a>
+                  </component>
                   <span v-else class="footer__text">
                     {{ item.text }}
                   </span>
@@ -85,9 +92,14 @@
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router'
 import { useFooterModel } from '../model/footerModel'
 
 const { logo, columns, bottom } = useFooterModel()
+
+function isInternalLink(href) {
+  return typeof href === 'string' && href.startsWith('/')
+}
 </script>
 
 <style scoped>

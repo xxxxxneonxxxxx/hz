@@ -13,15 +13,15 @@
   --color--news-load-more-text: #ffffff;
   --color--news-text: #222222;
 
-  --font-size--news-title: 72px;
-  --font-size--news-title-mobile: 42px;
-  --font-size--news-breadcrumbs: 16px;
-  --font-size--news-breadcrumbs-mobile: 14px;
-  --font-size--news-card-title: 24px;
-  --font-size--news-card-title-mobile: 20px;
-  --font-size--news-card-date: 18px;
-  --font-size--news-card-date-mobile: 16px;
-  --font-size--news-load-more: 18px;
-  --font-size--news-text: 24px;
-  --font-size--news-text-mobile: 18px;
+  --font-size--news-title: var(--font-size--title-hero);
+  --font-size--news-title-mobile: var(--font-size--title-hero-mobile);
+  --font-size--news-breadcrumbs: var(--font-size--breadcrumbs);
+  --font-size--news-breadcrumbs-mobile: var(--font-size--breadcrumbs-mobile);
+  --font-size--news-card-title: var(--font-size--text-xl);
+  --font-size--news-card-title-mobile: var(--font-size--text-md);
+  --font-size--news-card-date: var(--font-size--text-base);
+  --font-size--news-card-date-mobile: var(--font-size--text-base-mobile);
+  --font-size--news-load-more: var(--font-size--button-sm);
+  --font-size--news-text: var(--font-size--text-xl);
+  --font-size--news-text-mobile: var(--font-size--text-base);
 }

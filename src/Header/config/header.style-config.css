@@ -7,8 +7,8 @@
 
     --font-size--header-topbar-contact: 12px;
     --font-size--header-topbar-contact-mobile: 11px;
-    --font-size--header-navbar-link: 14px;
-    --font-size--header-navbar-mobile-link: 15px;
+    --font-size--header-navbar-link: var(--font-size--nav-link);
+    --font-size--header-navbar-mobile-link: var(--font-size--nav-link-mobile);
 
     --size--header-topbar-height: 52px;
     --size--header-navbar-height: 108px;

@@ -6,8 +6,8 @@
   --color--app-carousel-button-bg: #8e24c6;
   --color--app-carousel-button-text: #ffffff;
 
-  --font-size--app-carousel-title: 42px;
-  --font-size--app-carousel-title-mobile: 30px;
-  --font-size--app-carousel-button: 28px;
-  --font-size--app-carousel-button-mobile: 20px;
+  --font-size--app-carousel-title: var(--font-size--title-section);
+  --font-size--app-carousel-title-mobile: var(--font-size--title-section-mobile);
+  --font-size--app-carousel-button: var(--font-size--button-lg);
+  --font-size--app-carousel-button-mobile: var(--font-size--button-lg-mobile);
 }

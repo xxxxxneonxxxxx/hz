@@ -22,33 +22,33 @@
   --color--school-pitchings-note-bg: #f4f4fb;
   --color--school-pitchings-note-border: #8f21c9;
 
-  --font-size--school-page-title: 72px;
-  --font-size--school-page-title-mobile: 42px;
+  --font-size--school-page-title: var(--font-size--title-hero);
+  --font-size--school-page-title-mobile: var(--font-size--title-hero-mobile);
 
-  --font-size--school-breadcrumbs: 16px;
-  --font-size--school-breadcrumbs-mobile: 14px;
+  --font-size--school-breadcrumbs: var(--font-size--breadcrumbs);
+  --font-size--school-breadcrumbs-mobile: var(--font-size--breadcrumbs-mobile);
 
-  --font-size--school-section-title: 36px;
-  --font-size--school-section-title-mobile: 28px;
+  --font-size--school-section-title: var(--font-size--title-card);
+  --font-size--school-section-title-mobile: var(--font-size--title-card-mobile);
   --font-size--school-recognition-title: 34px;
   --font-size--school-recognition-title-mobile: 36px;
   --font-size--school-recognition-name: 34px;
-  --font-size--school-recognition-name-mobile: 24px;
+  --font-size--school-recognition-name-mobile: var(--font-size--title-item);
   --font-size--school-recognition-link: 34px;
-  --font-size--school-recognition-link-mobile: 30px;
-  --font-size--school-wins-title: 36px;
-  --font-size--school-wins-title-mobile: 28px;
+  --font-size--school-recognition-link-mobile: var(--font-size--title-section-mobile);
+  --font-size--school-wins-title: var(--font-size--title-card);
+  --font-size--school-wins-title-mobile: var(--font-size--title-card-mobile);
   --font-size--school-wins-value: 34px;
   --font-size--school-wins-value-mobile: 52px;
-  --font-size--school-wins-text: 24px;
-  --font-size--school-wins-text-mobile: 18px;
-  --font-size--school-pitchings-title: 36px;
-  --font-size--school-pitchings-title-mobile: 28px;
-  --font-size--school-pitchings-text: 24px;
-  --font-size--school-pitchings-text-mobile: 18px;
+  --font-size--school-wins-text: var(--font-size--text-xl);
+  --font-size--school-wins-text-mobile: var(--font-size--text-base);
+  --font-size--school-pitchings-title: var(--font-size--title-card);
+  --font-size--school-pitchings-title-mobile: var(--font-size--title-card-mobile);
+  --font-size--school-pitchings-text: var(--font-size--text-xl);
+  --font-size--school-pitchings-text-mobile: var(--font-size--text-base);
 
-  --font-size--school-text: 18px;
-  --font-size--school-text-mobile: 16px;
+  --font-size--school-text: var(--font-size--text-base);
+  --font-size--school-text-mobile: var(--font-size--text-base-mobile);
 
   --line-height--school-title: 1.05;
   --line-height--school-text: 1.55;

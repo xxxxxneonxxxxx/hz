@@ -12,19 +12,19 @@
     --color--home-carousel-nav-bg: rgba(43, 53, 66, 0.56);
     --color--home-carousel-nav-icon: #ffffff;
 
-    --font-size--home-carousel-title: 64px;
+    --font-size--home-carousel-title: var(--font-size--title-page);
     --font-size--home-carousel-title-tablet: 48px;
     --font-size--home-carousel-title-mobile: 32px;
-    --font-size--home-carousel-button: 20px;
-    --font-size--home-carousel-button-mobile: 18px;
+    --font-size--home-carousel-button: var(--font-size--button-md);
+    --font-size--home-carousel-button-mobile: var(--font-size--button-md-mobile);
 
     --color--home-program-cards-bg: #e3c7f0;
     --color--home-program-cards-card-bg: #d7bfdc;
     --color--home-program-cards-card-hover-overlay: rgba(128, 128, 128, 0.1);
     --color--home-program-cards-title-text: #8928c0;
 
-    --font-size--home-program-cards-title: 24px;
-    --font-size--home-program-cards-title-mobile: 22px;
+    --font-size--home-program-cards-title: var(--font-size--text-xl);
+    --font-size--home-program-cards-title-mobile: var(--font-size--title-item-mobile);
 
     --color--home-intro-bg: #ffffff;
     --color--home-intro-title-text: #1d1d21;
@@ -32,12 +32,12 @@
     --color--home-intro-button-bg: #8e24c6;
     --color--home-intro-button-text: #ffffff;
 
-    --font-size--home-intro-title: 36px;
-    --font-size--home-intro-title-mobile: 30px;
-    --font-size--home-intro-text: 18px;
-    --font-size--home-intro-text-mobile: 18px;
-    --font-size--home-intro-button: 18px;
-    --font-size--home-intro-button-mobile: 17px;
+    --font-size--home-intro-title: var(--font-size--title-card);
+    --font-size--home-intro-title-mobile: var(--font-size--title-section-mobile);
+    --font-size--home-intro-text: var(--font-size--text-base);
+    --font-size--home-intro-text-mobile: var(--font-size--text-base);
+    --font-size--home-intro-button: var(--font-size--button-sm);
+    --font-size--home-intro-button-mobile: var(--font-size--button-sm-mobile);
 
     --color--home-featured-bg: #ffffff;
     --color--home-featured-title-text: #202027;
@@ -50,14 +50,14 @@
     --color--home-featured-placeholder-link-bg: #2c81e8;
     --color--home-featured-placeholder-link-text: #ffffff;
 
-    --font-size--home-featured-title: 36px;
-    --font-size--home-featured-title-mobile: 30px;
-    --font-size--home-featured-text: 18px;
-    --font-size--home-featured-text-mobile: 18px;
-    --font-size--home-featured-vk-badge: 28px;
+    --font-size--home-featured-title: var(--font-size--title-card);
+    --font-size--home-featured-title-mobile: var(--font-size--title-section-mobile);
+    --font-size--home-featured-text: var(--font-size--text-base);
+    --font-size--home-featured-text-mobile: var(--font-size--text-base);
+    --font-size--home-featured-vk-badge: var(--font-size--title-item);
     --font-size--home-featured-placeholder-title: 26px;
-    --font-size--home-featured-placeholder-text: 18px;
-    --font-size--home-featured-placeholder-link: 18px;
+    --font-size--home-featured-placeholder-text: var(--font-size--text-base);
+    --font-size--home-featured-placeholder-link: var(--font-size--button-sm);
 
     --color--home-lecturers-bg: #ffffff;
     --color--home-lecturers-title-text: #1d1d21;
@@ -68,10 +68,10 @@
     --color--home-lecturers-nav-bg: #8b8b8b;
     --color--home-lecturers-nav-icon: #ffffff;
 
-    --font-size--home-lecturers-title: 36px;
-    --font-size--home-lecturers-title-mobile: 30px;
-    --font-size--home-lecturers-description: 24px;
-    --font-size--home-lecturers-description-mobile: 18px;
+    --font-size--home-lecturers-title: var(--font-size--title-card);
+    --font-size--home-lecturers-title-mobile: var(--font-size--title-section-mobile);
+    --font-size--home-lecturers-description: var(--font-size--text-xl);
+    --font-size--home-lecturers-description-mobile: var(--font-size--text-base);
     --font-size--home-lecturers-name: 26px;
-    --font-size--home-lecturers-role: 20px;
+    --font-size--home-lecturers-role: var(--font-size--text-md);
 }

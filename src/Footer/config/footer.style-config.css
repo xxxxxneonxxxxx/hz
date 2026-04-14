@@ -7,7 +7,7 @@
     --color--footer-accent: #ffffff;
     --color--footer-social: rgba(255, 255, 255, 0.88);
 
-    --font-size--footer-title: 22px;
-    --font-size--footer-link: 18px;
+    --font-size--footer-title: var(--font-size--subtitle-sm);
+    --font-size--footer-link: var(--font-size--text-base);
     --font-size--footer-bottom: 13px;
 }

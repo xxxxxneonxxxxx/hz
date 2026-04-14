@@ -1,106 +1,6 @@
-const createIconDataUrl = (svg) => `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`
+import { DETAIL_PHOTO_ICONS } from './detail-photo-icons.config.js'
 
-const PRODUCING_ICONS = {
-  camera: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <rect x="20" y="34" width="42" height="28" rx="6" stroke="#8B2CC3" stroke-width="4"/>
-      <path d="M62 42l14-8v28L62 54" stroke="#8B2CC3" stroke-width="4" stroke-linejoin="round"/>
-      <circle cx="34" cy="28" r="8" stroke="#8B2CC3" stroke-width="4"/>
-      <circle cx="48" cy="28" r="8" stroke="#8B2CC3" stroke-width="4"/>
-      <circle cx="34" cy="48" r="3" fill="#8B2CC3"/>
-      <circle cx="42" cy="48" r="3" fill="#8B2CC3"/>
-      <circle cx="50" cy="48" r="3" fill="#8B2CC3"/>
-    </svg>
-  `),
-  document: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M28 18h28l12 12v48H28z" stroke="#8B2CC3" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M56 18v16h16" stroke="#8B2CC3" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M38 46h20M38 56h20M38 66h14" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <rect x="38" y="30" width="8" height="8" rx="1" stroke="#8B2CC3" stroke-width="4"/>
-    </svg>
-  `),
-  masterclass: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <circle cx="48" cy="24" r="9" stroke="#8B2CC3" stroke-width="4"/>
-      <path d="M22 62c2-10 11-16 20-16h12c9 0 18 6 20 16" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <path d="M12 70c1-8 8-13 15-13h4c7 0 14 5 15 13" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <path d="M50 70c1-8 8-13 15-13h4c7 0 14 5 15 13" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <path d="M20 30c5-8 13-12 28-12 15 0 23 4 28 12" stroke="#8B2CC3" stroke-width="4" stroke-dasharray="3 5" stroke-linecap="round"/>
-    </svg>
-  `),
-  laptop: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <rect x="24" y="24" width="48" height="32" rx="4" stroke="#8B2CC3" stroke-width="4"/>
-      <path d="M16 62h64v6a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4z" stroke="#8B2CC3" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M42 62h12" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  chair: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M34 16v36M62 16v36M34 22h28M34 42h28" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <path d="M28 50h40v12H28z" stroke="#8B2CC3" stroke-width="4"/>
-      <path d="M28 62l20 16M68 62L48 78" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  whyPractice: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M24 44V28a6 6 0 0 1 6-6h8v24" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M38 46V22a5 5 0 0 1 10 0v18" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M48 44V26a5 5 0 0 1 10 0v18" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M58 46V32a5 5 0 0 1 10 0v22a12 12 0 0 1-12 12H38L24 52" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M66 16l2-6M76 22l6-2M72 12l4-4" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  whyConditions: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M18 30a6 6 0 0 1 6-6h34l20 14v28a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6z" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M58 42h16a8 8 0 0 1 0 16H58a8 8 0 0 1 0-16Z" stroke="#fff" stroke-width="4"/>
-      <circle cx="66" cy="50" r="2" fill="#fff"/>
-      <path d="M44 24 58 10l10 18" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  `),
-  whyInvolvement: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <circle cx="38" cy="26" r="10" stroke="#fff" stroke-width="4"/>
-      <circle cx="58" cy="26" r="10" stroke="#fff" stroke-width="4"/>
-      <rect x="24" y="42" width="32" height="24" rx="4" stroke="#fff" stroke-width="4"/>
-      <path d="M56 48 74 40v28L56 60" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M34 54h12M34 60h12" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  whyNetworking: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <circle cx="32" cy="38" r="8" stroke="#fff" stroke-width="4"/>
-      <circle cx="64" cy="38" r="8" stroke="#fff" stroke-width="4"/>
-      <path d="M24 74V58a8 8 0 0 1 8-8h0a8 8 0 0 1 8 8v16" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M56 74V58a8 8 0 0 1 8-8h0a8 8 0 0 1 8 8v16" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M40 30 48 20l8 10" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M48 20v20" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M44 14l-2-6M52 14l2-6M58 18l6-4" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  guaranteeOfficial: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M30 14h26l18 18v40a8 8 0 0 1-8 8H30a8 8 0 0 1-8-8V22a8 8 0 0 1 8-8Z" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M56 14v18h18M38 44h20M38 56h20M38 68h16" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  `),
-  guaranteeRefund: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <circle cx="48" cy="34" r="16" stroke="#fff" stroke-width="4"/>
-      <path d="M48 24v20M54 28c0-2.5-3-4-6-4s-6 1.5-6 4 3 4 6 4 6 1.5 6 4-3 4-6 4-6-1.5-6-4" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M18 70h16l8-6h12l18-10a5 5 0 0 1 5 9L58 76H34l-16-2z" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  `),
-  guaranteeContract: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M24 14h34l14 14v46a8 8 0 0 1-8 8H24a8 8 0 0 1-8-8V22a8 8 0 0 1 8-8Z" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M58 14v14h14M32 44h22M32 56h22M32 68h16" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="m58 62 12-12a6 6 0 0 1 8 8L66 70l-12 4z" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-    </svg>
-  `),
-}
+const PRODUCING_ICONS = DETAIL_PHOTO_ICONS
 
 export const OSNOVY_PRODYUSIROVANIYA_PAGE = {
   id: 'producing',
@@ -117,7 +17,38 @@ export const OSNOVY_PRODYUSIROVANIYA_PAGE = {
     image: 'https://theoneschool.ru/wp-content/uploads/2022/07/osnovy-prodyusirovaniya.jpg',
     alt: 'Обложка курса «Основы продюсирования»',
   },
+  whyUsSection: {
+    title: 'ПОЧЕМУ МЫ?',
+    subtitle: 'Потому что всё, что мы делаем, мы делаем хорошо',
+    items: [
+      {
+        id: 'why-practice',
+        icon: { src: PRODUCING_ICONS.whyPractice, alt: 'Иконка практики' },
+        title: 'РЕАЛЬНАЯ ПРАКТИКА',
+        text: 'На наших курсах Вы не просто послушаете лекции. Вы освоите основы продюсирования и реально шаг за шагом разберетесь в данной теме.',
+      },
+      {
+        id: 'why-conditions',
+        icon: { src: PRODUCING_ICONS.whyConditions, alt: 'Иконка условий' },
+        title: 'УСЛОВИЯ',
+        text: 'Основной курс длится 5 месяцев. После завершения у Вас остается 60 дней доступа к видео-урокам, платформе, чату, закрытой группе и ответам преподавателей.',
+      },
+      {
+        id: 'why-involvement',
+        icon: { src: PRODUCING_ICONS.whyInvolvement, alt: 'Иконка вовлеченности' },
+        title: 'ВОВЛЕЧЕННОСТЬ',
+        text: 'Мы относимся с трепетом и заботой к каждому студенту. Читаем каждое творческое задание. При необходимости замораживаем курс, созваниваемся, общаемся и всегда на связи.',
+      },
+      {
+        id: 'why-networking',
+        icon: { src: PRODUCING_ICONS.whyNetworking, alt: 'Иконка знакомств' },
+        title: 'ЗНАКОМСТВА',
+        text: 'На закрытых встречах и Zoom-вечеринках Вы знакомитесь со студентами, преподавателями и действующими кинематографистами, обмениваетесь проектами и собираете профессиональные связи.',
+      },
+    ],
+  },
   benefits: {
+    title: 'ВАШИ РЕЗУЛЬТАТЫ ПОСЛЕ КУРСА',
     items: [
       {
         id: 'budget',
@@ -148,7 +79,7 @@ export const OSNOVY_PRODYUSIROVANIYA_PAGE = {
       label: 'ХОЧУ СТАТЬ ПРОДЮСЕРОМ',
     },
   },
-  learningSection: {
+  learningProcessSection: {
     title: 'КАК ПРОХОДИТ ОБУЧЕНИЕ?',
     items: [
       {
@@ -168,6 +99,38 @@ export const OSNOVY_PRODYUSIROVANIYA_PAGE = {
         icon: { src: PRODUCING_ICONS.masterclass, alt: 'Иконка мастер-классов' },
         title: 'МАСТЕР-КЛАССЫ',
         paragraphs: ['Лекции и мастер-классы. Если не сможете прийти — все встречи записываются.'],
+      },
+    ],
+  },
+  learningSection: {
+    title: 'КАК УЧИМСЯ?',
+    items: [
+      {
+        id: 'theory',
+        icon: { src: PRODUCING_ICONS.laptop, alt: 'Иконка теории' },
+        title: 'ТЕОРИЯ',
+        paragraphs: [
+          'Будете смотреть видео-уроки по продюсированию, финансированию, праву, смете и организации кинопроизводства.',
+          'Курс охватывает более 37 тем и дает системное понимание профессии от разработки проекта до дистрибуции.',
+        ],
+      },
+      {
+        id: 'practice',
+        icon: { src: PRODUCING_ICONS.chair, alt: 'Иконка практики' },
+        title: 'ПРАКТИКА',
+        paragraphs: [
+          'После тем выполняете практические задания, которые проверяет преподаватель.',
+          'По итогу соберете смету, портфолио и рабочее понимание, как упаковывать и продвигать свой проект.',
+        ],
+      },
+      {
+        id: 'industry',
+        icon: { src: PRODUCING_ICONS.camera, alt: 'Иконка индустрии' },
+        title: 'ИНДУСТРИЯ',
+        paragraphs: [
+          'Разберетесь, где искать финансирование, как защищать права и как общаться с продюсерами, фондами и рынком.',
+          'Параллельно войдете в среду школы через лекции, мастер-классы и закрытое кино-сообщество.',
+        ],
       },
     ],
   },
@@ -205,33 +168,27 @@ export const OSNOVY_PRODYUSIROVANIYA_PAGE = {
       },
     ],
   },
-  whyUsSection: {
-    title: 'ПОЧЕМУ МЫ?',
-    subtitle: 'Потому что всё, что мы делаем, мы делаем хорошо',
-    items: [
+  carouselSection: {
+    title: 'ПОПАДАЙТЕ В КИНО-СООБЩЕСТВО THEONE',
+    action: {
+      label: 'ХОЧУ СТАТЬ ПРОДЮСЕРОМ',
+      event: 'open-consultation',
+    },
+    slides: [
       {
-        id: 'why-practice',
-        icon: { src: PRODUCING_ICONS.whyPractice, alt: 'Иконка практики' },
-        title: 'РЕАЛЬНАЯ ПРАКТИКА',
-        text: 'На наших курсах Вы не просто послушаете лекции. Вы освоите основы продюсирования и реально шаг за шагом разберетесь в данной теме.',
+        id: 'producing-community-1',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/07/osnovy-prodyusirovaniya.jpg',
+        alt: 'Обложка курса основы продюсирования',
       },
       {
-        id: 'why-conditions',
-        icon: { src: PRODUCING_ICONS.whyConditions, alt: 'Иконка условий' },
-        title: 'УСЛОВИЯ',
-        text: 'Основной курс длится 5 месяцев. После его завершения у Вас остается 60 дней доступа к видео-урокам, платформе, чату, закрытой группе и ответам преподавателей.',
+        id: 'producing-community-2',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/06/252.png',
+        alt: 'Сертификат курса основы продюсирования',
       },
       {
-        id: 'why-involvement',
-        icon: { src: PRODUCING_ICONS.whyInvolvement, alt: 'Иконка вовлеченности' },
-        title: 'ВОВЛЕЧЕННОСТЬ',
-        text: 'Мы относимся с трепетом и заботой к каждому студенту. Читаем каждое творческое задание. При необходимости замораживаем курс, созваниваемся, общаемся и всегда на связи.',
-      },
-      {
-        id: 'why-networking',
-        icon: { src: PRODUCING_ICONS.whyNetworking, alt: 'Иконка знакомств' },
-        title: 'ЗНАКОМСТВА',
-        text: 'Вы приобретете нетворкинг, знакомства и связи. Каждый месяц проходят закрытые Zoom-вечеринки, где студенты и действующие кинематографисты знакомятся, общаются и делятся проектами.',
+        id: 'producing-community-3',
+        image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1800',
+        alt: 'Команда обсуждает проект',
       },
     ],
   },
@@ -306,6 +263,45 @@ export const OSNOVY_PRODYUSIROVANIYA_PAGE = {
       },
     ],
   },
+  lecturerProjectsSection: {
+    title: 'НЕКОТОРЫЕ ПРОЕКТЫ И ВИЗУАЛЬНЫЕ РЕФЕРЕНСЫ ПО КУРСУ',
+    controls: {
+      prevLabel: 'Предыдущие материалы курса',
+      nextLabel: 'Следующие материалы курса',
+    },
+    items: [
+      {
+        id: 'producing-project-1',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/07/osnovy-prodyusirovaniya.jpg',
+        alt: 'Обложка курса основы продюсирования',
+      },
+      {
+        id: 'producing-project-2',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/06/252.png',
+        alt: 'Сертификат курса',
+      },
+      {
+        id: 'producing-project-3',
+        image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        alt: 'Команда продюсеров обсуждает проект',
+      },
+      {
+        id: 'producing-project-4',
+        image: 'https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        alt: 'Работа с документами и бюджетом проекта',
+      },
+      {
+        id: 'producing-project-5',
+        image: 'https://images.pexels.com/photos/8111886/pexels-photo-8111886.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        alt: 'Продюсерская работа на съемочной площадке',
+      },
+      {
+        id: 'producing-project-6',
+        image: 'https://images.pexels.com/photos/8108078/pexels-photo-8108078.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        alt: 'Подготовка кинопроекта к производству',
+      },
+    ],
+  },
   pricingTableSection: {
     columns: [
       { id: 'feature', label: 'ТАРИФЫ' },
@@ -339,6 +335,11 @@ export const OSNOVY_PRODYUSIROVANIYA_PAGE = {
       label: 'ДОГОВОР ОФЕРТЫ',
       href: 'https://theoneschool.ru/oferta/',
     },
+  },
+  schedulePreviewSection: {
+    title: 'ПРИМЕР РАСПИСАНИЯ ОНЛАЙН ВСТРЕЧ',
+    image: 'https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1800',
+    alt: 'Пример расписания онлайн-встреч',
   },
   ctaBannerSection: {
     titleLines: ['Выбирайте жизнь.', 'Выбирайте будущее.'],

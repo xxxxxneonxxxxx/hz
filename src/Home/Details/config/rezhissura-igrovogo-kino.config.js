@@ -1,106 +1,6 @@
-const createIconDataUrl = (svg) => `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`
+import { DETAIL_PHOTO_ICONS } from './detail-photo-icons.config.js'
 
-const DIRECTING_ICONS = {
-  camera: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <rect x="20" y="34" width="42" height="28" rx="6" stroke="#8B2CC3" stroke-width="4"/>
-      <path d="M62 42l14-8v28L62 54" stroke="#8B2CC3" stroke-width="4" stroke-linejoin="round"/>
-      <circle cx="34" cy="28" r="8" stroke="#8B2CC3" stroke-width="4"/>
-      <circle cx="48" cy="28" r="8" stroke="#8B2CC3" stroke-width="4"/>
-      <circle cx="34" cy="48" r="3" fill="#8B2CC3"/>
-      <circle cx="42" cy="48" r="3" fill="#8B2CC3"/>
-      <circle cx="50" cy="48" r="3" fill="#8B2CC3"/>
-    </svg>
-  `),
-  document: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M28 18h28l12 12v48H28z" stroke="#8B2CC3" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M56 18v16h16" stroke="#8B2CC3" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M38 46h20M38 56h20M38 66h14" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <rect x="38" y="30" width="8" height="8" rx="1" stroke="#8B2CC3" stroke-width="4"/>
-    </svg>
-  `),
-  masterclass: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <circle cx="48" cy="24" r="9" stroke="#8B2CC3" stroke-width="4"/>
-      <path d="M22 62c2-10 11-16 20-16h12c9 0 18 6 20 16" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <path d="M12 70c1-8 8-13 15-13h4c7 0 14 5 15 13" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <path d="M50 70c1-8 8-13 15-13h4c7 0 14 5 15 13" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <path d="M20 30c5-8 13-12 28-12 15 0 23 4 28 12" stroke="#8B2CC3" stroke-width="4" stroke-dasharray="3 5" stroke-linecap="round"/>
-    </svg>
-  `),
-  laptop: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <rect x="24" y="24" width="48" height="32" rx="4" stroke="#8B2CC3" stroke-width="4"/>
-      <path d="M16 62h64v6a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4z" stroke="#8B2CC3" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M42 62h12" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  chair: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M34 16v36M62 16v36M34 22h28M34 42h28" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <path d="M28 50h40v12H28z" stroke="#8B2CC3" stroke-width="4"/>
-      <path d="M28 62l20 16M68 62L48 78" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  whyPractice: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M24 44V28a6 6 0 0 1 6-6h8v24" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M38 46V22a5 5 0 0 1 10 0v18" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M48 44V26a5 5 0 0 1 10 0v18" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M58 46V32a5 5 0 0 1 10 0v22a12 12 0 0 1-12 12H38L24 52" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M66 16l2-6M76 22l6-2M72 12l4-4" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  whyConditions: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M18 30a6 6 0 0 1 6-6h34l20 14v28a6 6 0 0 1-6 6H24a6 6 0 0 1-6-6z" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M58 42h16a8 8 0 0 1 0 16H58a8 8 0 0 1 0-16Z" stroke="#fff" stroke-width="4"/>
-      <circle cx="66" cy="50" r="2" fill="#fff"/>
-      <path d="M44 24 58 10l10 18" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  `),
-  whyInvolvement: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <circle cx="38" cy="26" r="10" stroke="#fff" stroke-width="4"/>
-      <circle cx="58" cy="26" r="10" stroke="#fff" stroke-width="4"/>
-      <rect x="24" y="42" width="32" height="24" rx="4" stroke="#fff" stroke-width="4"/>
-      <path d="M56 48 74 40v28L56 60" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M34 54h12M34 60h12" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  whyNetworking: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <circle cx="32" cy="38" r="8" stroke="#fff" stroke-width="4"/>
-      <circle cx="64" cy="38" r="8" stroke="#fff" stroke-width="4"/>
-      <path d="M24 74V58a8 8 0 0 1 8-8h0a8 8 0 0 1 8 8v16" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M56 74V58a8 8 0 0 1 8-8h0a8 8 0 0 1 8 8v16" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M40 30 48 20l8 10" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M48 20v20" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M44 14l-2-6M52 14l2-6M58 18l6-4" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  guaranteeOfficial: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M30 14h26l18 18v40a8 8 0 0 1-8 8H30a8 8 0 0 1-8-8V22a8 8 0 0 1 8-8Z" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M56 14v18h18M38 44h20M38 56h20M38 68h16" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  `),
-  guaranteeRefund: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <circle cx="48" cy="34" r="16" stroke="#fff" stroke-width="4"/>
-      <path d="M48 24v20M54 28c0-2.5-3-4-6-4s-6 1.5-6 4 3 4 6 4 6 1.5 6 4-3 4-6 4-6-1.5-6-4" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M18 70h16l8-6h12l18-10a5 5 0 0 1 5 9L58 76H34l-16-2z" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  `),
-  guaranteeContract: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M24 14h34l14 14v46a8 8 0 0 1-8 8H24a8 8 0 0 1-8-8V22a8 8 0 0 1 8-8Z" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M58 14v14h14M32 44h22M32 56h22M32 68h16" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="m58 62 12-12a6 6 0 0 1 8 8L66 70l-12 4z" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-    </svg>
-  `),
-}
+const DIRECTING_ICONS = DETAIL_PHOTO_ICONS
 
 export const REZHISSURA_IGROVOGO_KINO_PAGE = {
   id: 'directing',
@@ -108,7 +8,7 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
   title: 'Режиссура игрового кино',
   hero: {
     titleLines: ['Режиссура', 'игрового кино'],
-    description: 'снимайте кино под руководством практикующих режиссеров, операторов и кураторов школы',
+    description: 'снимите свой фильм и начните карьеру в кино',
     action: {
       label: 'НАЧАТЬ',
       href: 'https://wa.me/79675556082',
@@ -118,7 +18,7 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
     alt: 'Оператор работает с камерой на площадке',
   },
   whyUsSection: {
-    title: 'Почему мы?',
+    title: 'ПОЧЕМУ МЫ?',
     subtitle: 'Потому что всё, что мы делаем, мы делаем хорошо',
     items: [
       {
@@ -127,8 +27,8 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
           src: DIRECTING_ICONS.whyPractice,
           alt: 'Иконка практики',
         },
-        title: 'Реальная практика',
-        text: 'На наших курсах Вы не просто слушаете теорию, а сразу применяете её в работе над сценами, этюдами и режиссёрскими задачами шаг за шагом.',
+        title: 'РЕАЛЬНАЯ ПРАКТИКА',
+        text: 'На наших курсах Вы не просто послушаете лекции. Вы освоите основы драматургии и сценарного мастерства и реально, шаг за шагом, напишете свой сценарий.',
       },
       {
         id: 'why-conditions',
@@ -136,8 +36,8 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
           src: DIRECTING_ICONS.whyConditions,
           alt: 'Иконка условий',
         },
-        title: 'Условия',
-        text: 'Основной курс длится 3 месяца, а после его завершения у Вас остаётся дополнительный доступ к материалам, платформе, чату и обратной связи от кураторов.',
+        title: 'УСЛОВИЯ',
+        text: 'Основной курс длится 3 месяца. Но даже по окончанию этих 90 дней у Вас остается 60 дней доступа к видео-урокам, платформе, чату, закрытой группе и ответам преподавателей.',
       },
       {
         id: 'why-involvement',
@@ -145,8 +45,8 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
           src: DIRECTING_ICONS.whyInvolvement,
           alt: 'Иконка вовлеченности',
         },
-        title: 'Вовлеченность',
-        text: 'Мы внимательно относимся к каждому студенту: смотрим работы, обсуждаем решения, даём рекомендации и сопровождаем на протяжении всего обучения.',
+        title: 'ВОВЛЕЧЕННОСТЬ',
+        text: 'Мы относимся с трепетом и заботой к каждому нашему студенту. Читаем каждое творческое задание. При необходимости «замораживаем» курс, созваниваемся, общаемся и всегда на связи.',
       },
       {
         id: 'why-networking',
@@ -154,47 +54,58 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
           src: DIRECTING_ICONS.whyNetworking,
           alt: 'Иконка знакомств',
         },
-        title: 'Знакомства',
-        text: 'Во время обучения Вы попадаете в активную профессиональную среду, знакомитесь с единомышленниками, актёрами, сценаристами и режиссёрами, с которыми можно запускать проекты.',
+        title: 'ЗНАКОМСТВА',
+        text: 'Называйте как хотите — нетворкинг, знакомства, связи. На закрытых Zoom-вечеринках Вы знакомитесь, общаетесь, делитесь проектами, обмениваетесь сценариями и находите актеров и коллег.',
       },
     ],
   },
   benefits: {
+    title: 'ТВОИ РЕЗУЛЬТАТЫ ПОСЛЕ КУРСА',
     items: [
       {
-        id: 'language',
+        id: 'script',
         icon: {
-          src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Icons8%20flat%20film%20reel.svg',
-          alt: 'Иконка кинопленки',
+          src: DIRECTING_ICONS.document,
+          alt: 'Иконка сценария',
         },
-        title: 'Язык кадра',
+        title: 'СЦЕНАРИЙ',
         paragraphs: [
-          'Научитесь выстраивать визуальное решение сцены, работать с мизансценой и ритмом.',
-          'Поймете, как доносить историю через изображение, а не только через диалоги.',
+          'Напишете сценарий своего короткометражного фильма.',
         ],
       },
       {
-        id: 'set',
+        id: 'film',
         icon: {
-          src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Icons8%20flat%20camcorder.svg',
-          alt: 'Иконка камеры',
+          src: DIRECTING_ICONS.camera,
+          alt: 'Иконка фильма',
         },
-        title: 'Съемочная практика',
+        title: 'ФИЛЬМ',
         paragraphs: [
-          'Познакомитесь с реальной работой режиссера на площадке и взаимодействием со всей группой.',
-          'Сможете пройти путь от разбора сценария до постановки собственной сцены.',
+          'Снимите свой этюд или короткометражный фильм.',
         ],
       },
       {
-        id: 'career',
+        id: 'network',
         icon: {
-          src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Icons8%20flat%20clapperboard.svg',
-          alt: 'Иконка хлопушки',
+          src: DIRECTING_ICONS.masterclass,
+          alt: 'Иконка связей',
         },
-        title: 'Профессия',
+        title: 'СВЯЗИ',
         paragraphs: [
-          'Получите возможность собрать режиссерское портфолио и снять учебные работы в команде.',
-          'Лучшие студенты получают рекомендации, стажировки и доступ к реальным проектам школы.',
+          'Заведете знакомства.',
+          'Станете частью мира кино.',
+        ],
+      },
+      {
+        id: 'portfolio',
+        icon: {
+          src: DIRECTING_ICONS.laptop,
+          alt: 'Иконка портфолио',
+        },
+        title: 'ПОРТФОЛИО',
+        paragraphs: [
+          'Создадите портфолио.',
+          'Получите сертификат.',
         ],
       },
     ],
@@ -213,8 +124,8 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
         },
         title: 'ВИДЕО-УРОКИ',
         paragraphs: [
-          'Будете смотреть специально подготовленные уроки и разборы сцен с примерами из мирового кино.',
-          'Материал устроен так, чтобы вы видели режиссёрские решения не абстрактно, а на конкретных фильмах.',
+          'Будете смотреть специально подготовленные, качественные, творческие видео-уроки с примерами из фильмов.',
+          'Разберете как классику мирового кино, так и последние новинки, уже ставшие хитами.',
         ],
       },
       {
@@ -225,8 +136,8 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
         },
         title: 'ТВОРЧЕСКИЕ ЗАДАНИЯ',
         paragraphs: [
-          'После каждого урока будут задания на анализ, постановку и режиссёрское мышление.',
-          'Кураторы помогают доработать идеи и превратить их в ясные визуальные и постановочные решения.',
+          'После каждого видео-урока есть творческие задания.',
+          'Будете их выполнять и шаг за шагом писать свой сценарий. Преподаватель будет проверять каждое задание, давать обратную связь, помогать и подсказывать.',
         ],
       },
       {
@@ -237,8 +148,8 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
         },
         title: 'МАСТЕР-КЛАССЫ',
         paragraphs: [
-          'Будете посещать мастерские, лекции и мастер-классы с практикующими режиссёрами и продюсерами.',
-          'Если пропустите встречу, сможете посмотреть запись и вернуться к материалу позже.',
+          'Будете посещать мастерские, лекции и мастер-классы. Лекторы поделятся опытом и помогут развить ваш проект.',
+          'Такие встречи проходят от 2 раз в неделю. Если не сможете прийти — все встречи записываются и остаются на платформе обучения.',
         ],
       },
     ],
@@ -254,8 +165,8 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
         },
         title: 'ТЕОРИЯ',
         paragraphs: [
-          'Будете посещать онлайн мастерские, лекции, разборы фильмов и творческие встречи с практикующими режиссерами.',
-          'Даже если пропустите занятие, материалы и записи будут доступны на платформе в удобное время.',
+          'Изучите основы драматургии, сценарного мастерства, режиссуры, монтажа, света, цвета и организации съемочного процесса.',
+          'Все темы построены по авторской методологии и собраны в удобной онлайн-платформе.',
         ],
       },
       {
@@ -266,8 +177,8 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
         },
         title: 'ПРАКТИКА',
         paragraphs: [
-          'С первого модуля будете выполнять практические задания, разбирать сцены и собирать режиссерские решения.',
-          'Кураторы помогут превратить идеи в конкретные постановочные планы и визуальный язык проекта.',
+          'Шаг за шагом разработаете сценарий, пройдете предпродакшн, снимете и смонтируете свой фильм.',
+          'Кураторы и преподаватели проверяют задания, дают обратную связь и помогают довести проект до результата.',
         ],
       },
       {
@@ -278,8 +189,8 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
         },
         title: 'ИНДУСТРИЯ',
         paragraphs: [
-          'Получите обратную связь от профессионалов индустрии и понимание, как развивать проект дальше.',
-          'Лучшие студенты смогут войти в реальные команды, стажировки и продакшен-процессы школы.',
+          'Поймете, как искать актеров, собирать команду, готовить КПП, работать с продюсером и выходить на питчинги.',
+          'После курса сможете двигаться в сторону профессии, фестивалей, стажировок и реальных проектов.',
         ],
       },
     ],
@@ -292,9 +203,9 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
         title: '1 Сценарист',
         points: [
           'Новичок.',
-          'Любите писать и хотите лучше понимать, как текст превращается в изображение.',
-          'Хотите глубже разбираться в драматургии.',
-          'Ищете путь в кино через историю и работу с материалом.',
+          'Журналист, копирайтер, литератор, писатель, блогер или просто любите писать.',
+          'Хотите попробовать себя в роли сценариста.',
+          'Сценаристика для Вас далекий, неизведанный, но интересный мир.',
         ],
       },
       {
@@ -304,8 +215,8 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
           'Новичок.',
           'Мечтаете снять свой фильм.',
           'Любите смотреть фильмы и говорить о них.',
-          'Хотите попробовать себя в роли режиссёра.',
-          'Режиссура близка сердцу, но вы не понимаете, с чего начать.',
+          'Хотите попробовать себя в роли режиссера.',
+          'Режиссура близка сердцу, но Вы не понимаете, с чего начать.',
         ],
       },
       {
@@ -314,7 +225,7 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
         points: [
           'Вы влюблены в кинематограф.',
           'Хотите связать с ним жизнь.',
-          'Пока не понимаете, какая именно профессия в кино вам ближе, и хотите попробовать разные роли.',
+          'Ещё не знаете точно хотите быть сценаристом, режиссером, видеомонтажером или кем-то другим. Но главное — в кино.',
         ],
       },
     ],
@@ -349,22 +260,14 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
         id: 'directing-step-1',
         number: 1,
         label: '1 шаг',
-        title: 'Осваиваем визуальное мышление',
+        title: 'СЦЕНАРНОЕ МАСТЕРСТВО',
         topics: [
           {
-            title: 'Тема №1 Режиссёр и его язык',
+            title: 'Тема №1-8 Сценарий',
             items: [
-              'Изображение как способ рассказа',
-              'Мизансцена и точка зрения',
-              'Как режиссёр управляет вниманием зрителя',
-            ],
-          },
-          {
-            title: 'Тема №2 Анализ сцены',
-            items: [
-              'Разбор драматического действия',
-              'Конфликт внутри эпизода',
-              'Задача кадра',
+              'Идея, разработка идеи, логлайн и high-концепт',
+              'Писатель и сценарист, типичные ошибки, конфликт и герой',
+              'Трехактная структура, синопсис, оформление сценария',
             ],
           },
         ],
@@ -390,22 +293,14 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
         id: 'directing-step-2',
         number: 2,
         label: '2 шаг',
-        title: 'Работаем со сценарием',
+        title: 'ПРЕДПРОДАКШН / ПРОДАКШН. ТВОРЧЕСКАЯ ЧАСТЬ',
         topics: [
           {
-            title: 'Тема №3 Разбор сценария для постановки',
+            title: 'Тема №9-18 Творческая часть',
             items: [
-              'Сверхзадача сцены',
-              'Темпоритм',
-              'Что выносить в кадр, а что оставлять за кадром',
-            ],
-          },
-          {
-            title: 'Тема №4 Режиссёрская экспликация',
-            items: [
-              'Визуальные референсы',
-              'Смысловые акценты',
-              'Подготовка режиссёрского видения проекта',
+              'Кадр, постановка кадра, внутрикадровый монтаж',
+              'Принципы комфортного монтажа, цвет и работа со светом',
+              'Кастинг, работа с актером и режиссерский сценарий',
             ],
           },
         ],
@@ -418,22 +313,14 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
         id: 'directing-step-3',
         number: 3,
         label: '3 шаг',
-        title: 'Строим работу с актёром',
+        title: 'ПРЕДПРОДАКШН / ПРОДАКШН. ТЕХНИЧЕСКАЯ ЧАСТЬ',
         topics: [
           {
-            title: 'Тема №5 Актёрский разбор',
+            title: 'Тема №19-23 Техника',
             items: [
-              'Психология персонажа',
-              'Задачи и действия',
-              'Как разговаривать с актёром на площадке',
-            ],
-          },
-          {
-            title: 'Тема №6 Репетиции',
-            items: [
-              'Подготовка до съёмок',
-              'Импровизация и точность',
-              'Поиск правды в сцене',
+              'Камеры, объективы и другое оборудование',
+              'Экспозиция, диафрагма, выдержка, ISO и баланс белого',
+              'Типы света и технические параметры съемки',
             ],
           },
         ],
@@ -446,22 +333,14 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
         id: 'directing-step-4',
         number: 4,
         label: '4 шаг',
-        title: 'Выходим на площадку',
+        title: 'ПРЕДПРОДАКШН / ПРОДАКШН. ОРГАНИЗАЦИОННАЯ ЧАСТЬ',
         topics: [
           {
-            title: 'Тема №7 Работа с оператором и художником',
+            title: 'Тема №24-26 Организация',
             items: [
-              'Свет и композиция',
-              'Пространство кадра',
-              'Согласование решений команды',
-            ],
-          },
-          {
-            title: 'Тема №8 Постановка сцены',
-            items: [
-              'Блокинг',
-              'Режиссёрские задачи в процессе съёмки',
-              'Контроль эмоций и ритма',
+              'Съемочная группа, вызывные листы и КПП',
+              'Календарно-постановочный план, бюджет и договор',
+              'Продвижение, продюсер, питчинг, кинокомпании',
             ],
           },
         ],
@@ -474,22 +353,12 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
         id: 'directing-step-5',
         number: 5,
         label: '5 шаг',
-        title: 'Собираем фильм на монтаже',
+        title: 'ФИНАЛ',
         topics: [
           {
-            title: 'Тема №9 Монтажное мышление',
+            title: 'Итоговый результат',
             items: [
-              'Выбор дублей',
-              'Ритм сцены после съёмки',
-              'Как монтаж меняет смысл',
-            ],
-          },
-          {
-            title: 'Тема №10 Звук и музыкальное решение',
-            items: [
-              'Работа со звуковой атмосферой',
-              'Музыка как драматургический инструмент',
-              'Финальный тон сцены',
+              'Снимаем и монтируем фильм',
             ],
           },
         ],
@@ -502,22 +371,14 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
         id: 'directing-step-6',
         number: 6,
         label: '6 шаг',
-        title: 'Готовим проект к показу',
+        title: 'ДОПОЛНИТЕЛЬНЫЕ ТЕМЫ',
         topics: [
           {
-            title: 'Тема №11 Упаковка режиссёрской работы',
+            title: 'После основной программы',
             items: [
-              'Как представить свою работу',
-              'Фестивальная и индустриальная перспектива',
-              'Сбор портфолио режиссёра',
-            ],
-          },
-          {
-            title: 'Тема №12 Дальнейший маршрут в профессии',
-            items: [
-              'Командная работа на реальных проектах',
-              'Стажировки и коллаборации',
-              'Следующие шаги после обучения',
+              'Разборы кинофильмов и профессия режиссера',
+              'Режиссерский сценарий и монтажные решения для передачи замысла',
+              'Реклама, документальное кино и тренды сегодняшнего кино',
             ],
           },
         ],
@@ -535,45 +396,101 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
     items: [
       {
         id: 'directing-lecturer-1',
-        name: 'Ирина Волкова',
-        role: 'режиссер, монтажер',
-        image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        alt: 'Ирина Волкова',
+        name: 'Даниил Фомичев',
+        role: 'оператор',
+        image: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        alt: 'Даниил Фомичев',
       },
       {
         id: 'directing-lecturer-2',
-        name: 'Егор Чичканов',
+        name: 'Валентина Беспалая',
         role: 'сценарист, режиссер',
-        image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        alt: 'Егор Чичканов',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/05/valentina-bespalaya.jpg',
+        alt: 'Валентина Беспалая',
       },
       {
         id: 'directing-lecturer-3',
-        name: 'Александр Бородянский',
-        role: 'сценарист, актер, режиссер, продюсер',
-        image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        alt: 'Александр Бородянский',
+        name: 'Андрей Гаряж',
+        role: 'сценарист, писатель',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/05/andrej-garyazh.jpg',
+        alt: 'Андрей Гаряж',
       },
       {
         id: 'directing-lecturer-4',
-        name: 'Дмитрий Астрахан',
-        role: 'актер, режиссер, продюсер',
-        image: 'https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        alt: 'Дмитрий Астрахан',
+        name: 'Леонид Немцев',
+        role: 'писатель, сценарист, филолог',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/05/leonid-nemcev.jpg',
+        alt: 'Леонид Немцев',
       },
       {
         id: 'directing-lecturer-5',
         name: 'Михаил Богомазов',
-        role: 'оператор-постановщик',
+        role: 'кинооператор, художник по свету, фотограф',
         image: 'https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1200',
         alt: 'Михаил Богомазов',
       },
       {
         id: 'directing-lecturer-6',
-        name: 'Наташа Меркулова',
+        name: 'Дарья Карпова',
         role: 'сценарист, режиссер',
-        image: 'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        alt: 'Наташа Меркулова',
+        image: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        alt: 'Дарья Карпова',
+      },
+      {
+        id: 'directing-lecturer-7',
+        name: 'Андрей Корф',
+        role: 'режиссер, звукорежиссер',
+        image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        alt: 'Андрей Корф',
+      },
+      {
+        id: 'directing-lecturer-8',
+        name: 'Александра Натарова',
+        role: 'сценарист, продюсер',
+        image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1200',
+        alt: 'Александра Натарова',
+      },
+      {
+        id: 'directing-lecturer-9',
+        name: 'Кирилл Кузнецов',
+        role: 'сценарист, редактор, кинодоктор',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/05/kirill-kuznecov.jpg',
+        alt: 'Кирилл Кузнецов',
+      },
+      {
+        id: 'directing-lecturer-10',
+        name: 'Радик Кагиров',
+        role: 'сценарист',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/05/radik-kagirov.jpg',
+        alt: 'Радик Кагиров',
+      },
+      {
+        id: 'directing-lecturer-11',
+        name: 'Ирина Волкова',
+        role: 'режиссер, монтажер',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/05/irina-volkova.jpg',
+        alt: 'Ирина Волкова',
+      },
+      {
+        id: 'directing-lecturer-12',
+        name: 'Егор Чичканов',
+        role: 'сценарист, режиссер',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/05/egor-chichkanov.jpg',
+        alt: 'Егор Чичканов',
+      },
+      {
+        id: 'directing-lecturer-13',
+        name: 'Александр Бородянский',
+        role: 'сценарист, актер, режиссер, продюсер',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/04/aleksandr-borodyanskij.jpg',
+        alt: 'Александр Бородянский',
+      },
+      {
+        id: 'directing-lecturer-14',
+        name: 'Дмитрий Астрахан',
+        role: 'актер, режиссер, продюсер',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/04/astrakhan.jpg',
+        alt: 'Дмитрий Астрахан',
       },
     ],
   },
@@ -661,12 +578,12 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
     subtitle: 'Мы берем на себя обязательства и выполняем их',
     items: [
       { id: 'official', icon: { src: DIRECTING_ICONS.guaranteeOfficial, alt: 'Иконка официально' }, title: 'Официально', text: 'Мы официально зарегистрированы и платим налоги с 2018 года.' },
-      { id: 'refund', icon: { src: DIRECTING_ICONS.guaranteeRefund, alt: 'Иконка возврата' }, title: 'Возврат', text: 'Мы обязуемся вернуть деньги в соответствии с договором оферты, если Вам не подойдет наша методика.' },
-      { id: 'contract', icon: { src: DIRECTING_ICONS.guaranteeContract, alt: 'Иконка договора' }, title: 'Договор', text: 'Мы работаем по договору-оферте. В нем максимально подробно указаны все нюансы обучения.' },
+      { id: 'refund', icon: { src: DIRECTING_ICONS.guaranteeRefund, alt: 'Иконка возврата' }, title: 'Возврат', text: 'Мы обязуемся вернуть деньги в соответствии с договором оферты, в случае, если Вам не подойдет наша методика. Изучите договор оферты.' },
+      { id: 'contract', icon: { src: DIRECTING_ICONS.guaranteeContract, alt: 'Иконка договора' }, title: 'Договор', text: 'Мы работаем по договору-оферты. В нем максимально подробно указаны все нюансы обучения.' },
     ],
     action: {
       label: 'Договор оферты',
-      href: '#',
+      href: 'https://theoneschool.ru/oferta/',
     },
   },
   schedulePreviewSection: {
@@ -686,10 +603,10 @@ export const REZHISSURA_IGROVOGO_KINO_PAGE = {
   },
   cinematicBlock: {
     titleLines: [
-      'Ваш следующий кадр',
-      'будет таким же,',
-      'как вчера?',
-      'Или...',
+      'ТВОЕ ЗАВТРА БУДЕТ',
+      'ТАКИМ ЖЕ КАК',
+      'СЕГОДНЯ?',
+      'ИЛИ...',
     ],
     image: 'https://images.pexels.com/photos/1766604/pexels-photo-1766604.jpeg?auto=compress&cs=tinysrgb&w=1600',
     alt: 'Портрет с контрастным киношным светом',

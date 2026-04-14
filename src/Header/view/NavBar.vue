@@ -3,7 +3,13 @@
     <div class="navbar__container">
 
       <!-- Логотип -->
-      <a :href="logo.href" class="navbar__logo" @click="$emit('closeMenu')">
+      <component
+        :is="isInternalLink(logo.href) ? RouterLink : 'a'"
+        :to="isInternalLink(logo.href) ? logo.href : undefined"
+        :href="isInternalLink(logo.href) ? undefined : logo.href"
+        class="navbar__logo"
+        @click="$emit('closeMenu')"
+      >
         <img
             :src="logo.src"
             :alt="logo.alt"
@@ -11,20 +17,22 @@
             :height="logo.height"
             class="navbar__logo-img"
         />
-      </a>
+      </component>
 
       <!-- Десктоп навигация -->
       <ul class="navbar__nav">
         <li v-for="link in navLinks" :key="link.id" class="navbar__nav-item">
-          <a
-              :href="link.href"
+          <component
+              :is="isInternalLink(link.href) && !link.external ? RouterLink : 'a'"
+              :to="isInternalLink(link.href) && !link.external ? link.href : undefined"
+              :href="isInternalLink(link.href) && !link.external ? undefined : link.href"
               :target="link.external ? '_blank' : undefined"
               :rel="link.external ? 'noopener noreferrer' : undefined"
               class="navbar__nav-link"
               :class="{ 'navbar__nav-link--active': isActive(link.href) }"
           >
             {{ link.label }}
-          </a>
+          </component>
         </li>
       </ul>
 
@@ -51,8 +59,10 @@
       <div v-if="isMenuOpen" class="navbar__mobile-menu">
         <ul class="navbar__mobile-nav">
           <li v-for="link in navLinks" :key="link.id">
-            <a
-                :href="link.href"
+            <component
+                :is="isInternalLink(link.href) && !link.external ? RouterLink : 'a'"
+                :to="isInternalLink(link.href) && !link.external ? link.href : undefined"
+                :href="isInternalLink(link.href) && !link.external ? undefined : link.href"
                 :target="link.external ? '_blank' : undefined"
                 :rel="link.external ? 'noopener noreferrer' : undefined"
                 class="navbar__mobile-link"
@@ -62,7 +72,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                 <path d="M9 18l6-6-6-6"/>
               </svg>
-            </a>
+            </component>
           </li>
         </ul>
       </div>
@@ -72,6 +82,8 @@
 </template>
 
 <script setup>
+import { RouterLink, useRoute } from 'vue-router'
+
 const props = defineProps({
   logo:       { type: Object,  required: true },
   navLinks:   { type: Array,   required: true },
@@ -80,10 +92,14 @@ const props = defineProps({
 })
 
 defineEmits(['toggleMenu', 'closeMenu'])
+const route = useRoute()
 
 function isActive(href) {
-  if (typeof window === 'undefined') return false
-  return window.location.pathname === href
+  return isInternalLink(href) && route.path === href
+}
+
+function isInternalLink(href) {
+  return typeof href === 'string' && href.startsWith('/')
 }
 </script>
 

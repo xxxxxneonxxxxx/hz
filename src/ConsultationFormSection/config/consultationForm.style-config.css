@@ -15,13 +15,13 @@
     --color--consultation-form-modal-surface: #ffffff;
     --color--consultation-form-modal-close: #4e3962;
 
-    --font-size--consultation-form-title: 36px;
-    --font-size--consultation-form-title-mobile: 30px;
-    --font-size--consultation-form-input: 20px;
-    --font-size--consultation-form-input-mobile: 18px;
-    --font-size--consultation-form-button: 18px;
-    --font-size--consultation-form-button-mobile: 17px;
-    --font-size--consultation-form-agreement: 18px;
-    --font-size--consultation-form-agreement-mobile: 16px;
-    --font-size--consultation-form-message: 16px;
+    --font-size--consultation-form-title: var(--font-size--title-card);
+    --font-size--consultation-form-title-mobile: var(--font-size--title-card-mobile);
+    --font-size--consultation-form-input: var(--font-size--text-md);
+    --font-size--consultation-form-input-mobile: var(--font-size--text-base);
+    --font-size--consultation-form-button: var(--font-size--button-sm);
+    --font-size--consultation-form-button-mobile: var(--font-size--button-sm-mobile);
+    --font-size--consultation-form-agreement: var(--font-size--text-base);
+    --font-size--consultation-form-agreement-mobile: var(--font-size--text-base-mobile);
+    --font-size--consultation-form-message: var(--font-size--text-sm);
 }

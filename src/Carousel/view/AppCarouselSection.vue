@@ -5,9 +5,6 @@
     :aria-label="section.ariaLabel || section.title || 'Карусель'"
   >
     <div class="app-carousel__container">
-      <h2 v-if="section.title" class="app-carousel__title">
-        {{ section.title }}
-      </h2>
 
       <div class="app-carousel__viewport">
         <Transition name="app-carousel-fade" mode="out-in">
@@ -141,12 +138,12 @@ function handleActionClick() {
 }
 
 .app-carousel__container {
-  max-width: 836px;
+  max-width: 650px;
   margin: 0 auto;
 }
 
 .app-carousel--compact .app-carousel__container {
-  max-width: 1120px;
+  max-width: 900px;
   margin: 0 auto;
 }
 

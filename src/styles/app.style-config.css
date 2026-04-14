@@ -8,4 +8,45 @@
     --color--text-muted: #5e554d;
     --color--text-soft: #8b7e72;
     --color--surface: #fcfaf5;
+
+    --font-size--title-hero: 72px;
+    --font-size--title-hero-mobile: 42px;
+    --font-size--title-page: 58px;
+    --font-size--title-page-mobile: 42px;
+    --font-size--title-section: 32px;
+    --font-size--title-section-mobile: 30px;
+    --font-size--title-card: 34px;
+    --font-size--title-card-mobile: 28px;
+    --font-size--title-item: 24px;
+    --font-size--title-item-mobile: 22px;
+
+    --font-size--subtitle-lg: 24px;
+    --font-size--subtitle-lg-mobile: 20px;
+    --font-size--subtitle-md: 24px;
+    --font-size--subtitle-md-mobile: 18px;
+    --font-size--subtitle-sm: 22px;
+    --font-size--subtitle-sm-mobile: 18px;
+
+    --font-size--text-xl: 24px;
+    --font-size--text-xl-mobile: 18px;
+    --font-size--text-lg: 22px;
+    --font-size--text-lg-mobile: 19px;
+    --font-size--text-md: 20px;
+    --font-size--text-md-mobile: 18px;
+    --font-size--text-base: 18px;
+    --font-size--text-base-mobile: 16px;
+    --font-size--text-sm: 16px;
+    --font-size--text-sm-mobile: 14px;
+
+    --font-size--button-lg: 24px;
+    --font-size--button-lg-mobile: 20px;
+    --font-size--button-md: 20px;
+    --font-size--button-md-mobile: 18px;
+    --font-size--button-sm: 18px;
+    --font-size--button-sm-mobile: 17px;
+
+    --font-size--breadcrumbs: 16px;
+    --font-size--breadcrumbs-mobile: 14px;
+    --font-size--nav-link: 14px;
+    --font-size--nav-link-mobile: 15px;
 }

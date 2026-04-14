@@ -127,9 +127,9 @@ onBeforeUnmount(() => {
 .hero-carousel__viewport {
   position: relative;
   width: 100%;
-  height: 70vh;
-  min-height: 460px;
-  max-height: 720px;
+  height: 78vh;
+  min-height: 560px;
+  max-height: 860px;
   overflow: hidden;
 }
 
@@ -146,7 +146,7 @@ onBeforeUnmount(() => {
   align-items: flex-end;
   width: 100%;
   height: 100%;
-  padding: 72px var(--spacing--page-x) 64px;
+  padding: 88px var(--spacing--page-x) 84px;
   background:
       linear-gradient(
           90deg,
@@ -160,13 +160,13 @@ onBeforeUnmount(() => {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 1160px;
+  max-width: 1320px;
 }
 
 .hero-carousel__title {
   display: inline-block;
   margin: 0;
-  padding: 14px 24px 18px;
+  padding: 18px 32px 22px;
   background: var(--color--home-carousel-title-bg);
   color: var(--color--home-carousel-title-text);
   font-size: var(--font-size--home-carousel-title);
@@ -178,10 +178,10 @@ onBeforeUnmount(() => {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 222px;
-  min-height: 72px;
-  margin-top: 40px;
-  padding: 0 28px;
+  min-width: 280px;
+  min-height: 80px;
+  margin-top: 56px;
+  padding: 0 34px;
   border-radius: 14px;
   background: var(--color--home-carousel-button-bg);
   color: var(--color--home-carousel-button-text);
@@ -238,12 +238,12 @@ onBeforeUnmount(() => {
 
 @media (max-width: 1280px) {
   .hero-carousel__viewport {
-    min-height: 420px;
-    height: 64vh;
+    min-height: 500px;
+    height: 70vh;
   }
 
   .hero-carousel__overlay {
-    padding: 64px var(--spacing--page-x) 56px;
+    padding: 76px var(--spacing--page-x) 64px;
   }
 
   .hero-carousel__title {
@@ -253,24 +253,24 @@ onBeforeUnmount(() => {
 
 @media (max-width: 900px) {
   .hero-carousel__viewport {
-    min-height: 360px;
-    height: 54vh;
+    min-height: 420px;
+    height: 62vh;
   }
 
   .hero-carousel__overlay {
     align-items: flex-end;
-    padding: 40px var(--spacing--page-x-mobile) 36px;
+    padding: 48px var(--spacing--page-x-mobile) 42px;
   }
 
   .hero-carousel__title {
-    padding: 12px 16px 14px;
+    padding: 14px 20px 16px;
     font-size: var(--font-size--home-carousel-title-mobile);
   }
 
   .hero-carousel__button {
-    min-width: 170px;
-    min-height: 56px;
-    margin-top: 20px;
+    min-width: 200px;
+    min-height: 64px;
+    margin-top: 32px;
     font-size: var(--font-size--home-carousel-button-mobile);
   }
 

@@ -1,98 +1,7 @@
-const createIconDataUrl = (svg) => `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`
+import { DETAIL_PHOTO_ICONS } from './detail-photo-icons.config.js'
+import cinematicImage from '../assets/165.jpg'
 
-const SCREENWRITING_ICONS = {
-  camera: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <rect x="20" y="34" width="42" height="28" rx="6" stroke="#8B2CC3" stroke-width="4"/>
-      <path d="M62 42l14-8v28L62 54" stroke="#8B2CC3" stroke-width="4" stroke-linejoin="round"/>
-      <circle cx="34" cy="28" r="8" stroke="#8B2CC3" stroke-width="4"/>
-      <circle cx="48" cy="28" r="8" stroke="#8B2CC3" stroke-width="4"/>
-      <circle cx="34" cy="48" r="3" fill="#8B2CC3"/>
-      <circle cx="42" cy="48" r="3" fill="#8B2CC3"/>
-      <circle cx="50" cy="48" r="3" fill="#8B2CC3"/>
-    </svg>
-  `),
-  document: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M28 18h28l12 12v48H28z" stroke="#8B2CC3" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M56 18v16h16" stroke="#8B2CC3" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M38 46h20M38 56h20M38 66h14" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <rect x="38" y="30" width="8" height="8" rx="1" stroke="#8B2CC3" stroke-width="4"/>
-    </svg>
-  `),
-  masterclass: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <circle cx="48" cy="24" r="9" stroke="#8B2CC3" stroke-width="4"/>
-      <path d="M22 62c2-10 11-16 20-16h12c9 0 18 6 20 16" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <path d="M12 70c1-8 8-13 15-13h4c7 0 14 5 15 13" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <path d="M50 70c1-8 8-13 15-13h4c7 0 14 5 15 13" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <path d="M20 30c5-8 13-12 28-12 15 0 23 4 28 12" stroke="#8B2CC3" stroke-width="4" stroke-dasharray="3 5" stroke-linecap="round"/>
-    </svg>
-  `),
-  laptop: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <rect x="24" y="24" width="48" height="32" rx="4" stroke="#8B2CC3" stroke-width="4"/>
-      <path d="M16 62h64v6a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4z" stroke="#8B2CC3" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M42 62h12" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  chair: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M34 16v36M62 16v36M34 22h28M34 42h28" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-      <path d="M28 50h40v12H28z" stroke="#8B2CC3" stroke-width="4"/>
-      <path d="M28 62l20 16M68 62L48 78" stroke="#8B2CC3" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  whyPractice: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M24 44V28a6 6 0 0 1 6-6h8v24" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M38 46V22a5 5 0 0 1 10 0v18" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M48 44V26a5 5 0 0 1 10 0v18" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M58 46V32a5 5 0 0 1 10 0v22a12 12 0 0 1-12 12H38L24 52" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M66 16l2-6M76 22l6-2M72 12l4-4" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  whyInvolvement: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <circle cx="38" cy="26" r="10" stroke="#fff" stroke-width="4"/>
-      <circle cx="58" cy="26" r="10" stroke="#fff" stroke-width="4"/>
-      <rect x="24" y="42" width="32" height="24" rx="4" stroke="#fff" stroke-width="4"/>
-      <path d="M56 48 74 40v28L56 60" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M34 54h12M34 60h12" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  whyNetworking: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <circle cx="32" cy="38" r="8" stroke="#fff" stroke-width="4"/>
-      <circle cx="64" cy="38" r="8" stroke="#fff" stroke-width="4"/>
-      <path d="M24 74V58a8 8 0 0 1 8-8h0a8 8 0 0 1 8 8v16" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M56 74V58a8 8 0 0 1 8-8h0a8 8 0 0 1 8 8v16" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M40 30 48 20l8 10" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M48 20v20" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M44 14l-2-6M52 14l2-6M58 18l6-4" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  `),
-  guaranteeOfficial: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M30 14h26l18 18v40a8 8 0 0 1-8 8H30a8 8 0 0 1-8-8V22a8 8 0 0 1 8-8Z" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M56 14v18h18M38 44h20M38 56h20M38 68h16" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  `),
-  guaranteeRefund: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <circle cx="48" cy="34" r="16" stroke="#fff" stroke-width="4"/>
-      <path d="M48 24v20M54 28c0-2.5-3-4-6-4s-6 1.5-6 4 3 4 6 4 6 1.5 6 4-3 4-6 4-6-1.5-6-4" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-      <path d="M18 70h16l8-6h12l18-10a5 5 0 0 1 5 9L58 76H34l-16-2z" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  `),
-  guaranteeContract: createIconDataUrl(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none">
-      <path d="M24 14h34l14 14v46a8 8 0 0 1-8 8H24a8 8 0 0 1-8-8V22a8 8 0 0 1 8-8Z" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M58 14v14h14M32 44h22M32 56h22M32 68h16" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="m58 62 12-12a6 6 0 0 1 8 8L66 70l-12 4z" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
-    </svg>
-  `),
-}
+const SCREENWRITING_ICONS = DETAIL_PHOTO_ICONS
 
 export const SCENARNOE_MASTERSTVO_PAGE = {
   id: 'screenwriting',
@@ -474,7 +383,7 @@ export const SCENARNOE_MASTERSTVO_PAGE = {
   },
   cinematicBlock: {
     titleLines: ['ВАШЕ ЗАВТРА', 'БУДЕТ ТАКИМ ЖЕ', 'КАК СЕГОДНЯ?', 'ИЛИ...'],
-    image: 'https://theoneschool.ru/wp-content/uploads/2022/05/214.png',
+    image: cinematicImage,
     alt: 'Визуальный блок курса «Сценарное мастерство»',
   },
 }

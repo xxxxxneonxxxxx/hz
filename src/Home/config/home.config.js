@@ -1,16 +1,19 @@
+import screenwritingHeroImage from '../assets/poster_event_1963225.jpg'
+import directingHeroImage from '../assets/slide_video-e1696256900226.jpg'
+
 export const HOME_HERO_SLIDES = [
     {
         id: 'screenwriting',
         title: 'Сценарное мастерство',
         href: '/programs/screenwriting',
-        image: 'https://images.pexels.com/photos/274937/pexels-photo-274937.jpeg?auto=compress&cs=tinysrgb&w=1800',
+        image: screenwritingHeroImage,
         alt: 'Съемочная площадка',
     },
     {
         id: 'directing',
         title: 'Режиссура игрового кино',
         href: '/programs/directing',
-        image: 'https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=1800',
+        image: directingHeroImage,
         alt: 'Кинокамера и катушки пленки',
     },
 ]
@@ -81,31 +84,31 @@ export const HOME_LECTURERS_SECTION = {
 
 export const HOME_LECTURERS = [
     {
-        id: 'natarova',
-        name: 'Александра Натарова',
-        role: 'сценарист, продюсер',
-        image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=900',
-        alt: 'Портрет Александры Натаровой',
+        id: 'astrakhan',
+        name: 'Дмитрий Астрахан',
+        role: 'актер, режиссер, продюсер',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/04/astrakhan.jpg',
+        alt: 'Портрет Дмитрия Астрахана',
     },
     {
-        id: 'korf',
-        name: 'Андрей Корф',
-        role: 'режиссер, звукорежиссер',
-        image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=900',
-        alt: 'Портрет Андрея Корфа',
+        id: 'borodyansky',
+        name: 'Александр Бородянский',
+        role: 'сценарист, актер, режиссер, продюсер',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/04/aleksandr-borodyanskij.jpg',
+        alt: 'Портрет Александра Бородянского',
     },
     {
-        id: 'karpova',
-        name: 'Дарья Карпова',
+        id: 'chichkanov',
+        name: 'Егор Чичканов',
         role: 'сценарист, режиссер',
-        image: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=900',
-        alt: 'Портрет Дарьи Карповой',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/05/egor-chichkanov.jpg',
+        alt: 'Портрет Егора Чичканова',
     },
     {
-        id: 'bogomazov',
-        name: 'Михаил Богомазов',
-        role: 'кинооператор, художник по свету, фотограф',
-        image: 'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=900',
-        alt: 'Портрет Михаила Богомазова',
+        id: 'volkova',
+        name: 'Ирина Волкова',
+        role: 'режиссер, монтажер',
+        image: 'https://theoneschool.ru/wp-content/uploads/2022/05/irina-volkova.jpg',
+        alt: 'Портрет Ирины Волковой',
     },
 ]

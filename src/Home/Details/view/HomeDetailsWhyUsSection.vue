@@ -84,6 +84,12 @@ defineProps({
   text-align: center;
 }
 
+.home-details-why-us__card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  max-width: calc((100% - 88px) / 2);
+  justify-self: center;
+}
+
 .home-details-why-us__icon {
   display: flex;
   align-items: center;
@@ -117,6 +123,10 @@ defineProps({
   .home-details-why-us__grid {
     grid-template-columns: 1fr;
     gap: 48px;
+  }
+
+  .home-details-why-us__card:last-child:nth-child(odd) {
+    max-width: none;
   }
 }
 

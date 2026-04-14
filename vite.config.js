@@ -5,8 +5,8 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
-export default defineConfig({
-  base:  '/hz/', 
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/hz/' : '/',
 
   plugins: [
     vue(),
@@ -18,4 +18,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-})
+}))
