@@ -48,9 +48,13 @@ defineProps({
 
 <style scoped>
 .home-details-guarantees {
-  padding: 88px var(--spacing--page-x) 96px;
-  background: linear-gradient(180deg, #8f27c6 0%, #9327c9 100%);
-  color: #ffffff;
+  padding: var(--size--home-details-section-padding-y) var(--spacing--page-x);
+  background: linear-gradient(
+    180deg,
+    var(--color--home-details-guarantees-bg-start) 0%,
+    var(--color--home-details-guarantees-bg-end) 100%
+  );
+  color: var(--color--home-details-guarantees-text);
 }
 
 .home-details-guarantees__container {
@@ -61,17 +65,18 @@ defineProps({
 .home-details-guarantees__title {
   margin: 0;
   font-size: 56px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.08;
-  text-align: center;
+  text-align: left;
 }
 
 .home-details-guarantees__subtitle {
   max-width: 900px;
-  margin: 28px auto 56px;
+  margin: 28px 0 56px;
   font-size: 30px;
   line-height: 1.35;
-  text-align: center;
+  text-align: justify;
+  text-wrap: pretty;
 }
 
 .home-details-guarantees__grid {
@@ -102,7 +107,7 @@ defineProps({
 .home-details-guarantees__card-title {
   margin: 0 0 18px;
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.12;
 }
 
@@ -117,9 +122,9 @@ defineProps({
   width: fit-content;
   margin: 56px auto 0;
   padding: 22px 46px;
-  border: 3px solid #ffffff;
+  border: 3px solid var(--color--home-details-guarantees-button-border);
   border-radius: 18px;
-  color: #ffffff;
+  color: var(--color--home-details-guarantees-text);
   font-size: 24px;
   font-weight: 700;
   text-decoration: none;
@@ -133,16 +138,18 @@ defineProps({
 
 @media (max-width: 900px) {
   .home-details-guarantees {
-    padding: 72px var(--spacing--page-x-mobile) 80px;
+    padding: var(--size--home-details-section-padding-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .home-details-guarantees__title {
     font-size: 40px;
+    text-align: center;
   }
 
   .home-details-guarantees__subtitle {
     margin: 20px auto 40px;
     font-size: 24px;
+    text-align: left;
   }
 
   .home-details-guarantees__card-title {

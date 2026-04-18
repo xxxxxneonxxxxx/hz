@@ -44,7 +44,7 @@ defineEmits(['open-consultation'])
 
 <style scoped>
 .home-details-cta-banner {
-  padding: 96px var(--spacing--page-x) 110px;
+  padding: var(--size--home-details-section-padding-y) var(--spacing--page-x);
   background: var(--color--home-details-cta-banner-bg);
 }
 
@@ -106,7 +106,7 @@ defineEmits(['open-consultation'])
 
 @media (max-width: 900px) {
   .home-details-cta-banner {
-    padding: 72px var(--spacing--page-x-mobile) 80px;
+    padding: var(--size--home-details-section-padding-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .home-details-cta-banner__image {

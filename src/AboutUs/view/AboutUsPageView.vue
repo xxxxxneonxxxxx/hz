@@ -4,7 +4,6 @@
     <AboutUsContent :page="page" />
     <AboutUsRecognitionSection
       :groups="page.recognitionSections"
-      :preview="page.lecturersPreview"
     />
     <AboutUsStudentWinsSection :section="page.studentWins" />
     <AboutUsPitchingsSection :section="page.pitchingsSection" />

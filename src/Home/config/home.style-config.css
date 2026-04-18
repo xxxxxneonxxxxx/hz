@@ -1,16 +1,16 @@
 :root {
-    --color--home-page-bg: #ffffff;
+    --color--home-page-bg: var(--color--white);
 
-    --color--home-carousel-bg: #ffffff;
-    --color--home-carousel-overlay-start: rgba(0, 0, 0, 0.34);
-    --color--home-carousel-overlay-middle: rgba(0, 0, 0, 0.12);
-    --color--home-carousel-overlay-end: rgba(0, 0, 0, 0.08);
-    --color--home-carousel-title-bg: rgba(104, 104, 104, 0.52);
-    --color--home-carousel-title-text: #ffffff;
-    --color--home-carousel-button-bg: #8e24c6;
-    --color--home-carousel-button-text: #ffffff;
-    --color--home-carousel-nav-bg: rgba(43, 53, 66, 0.56);
-    --color--home-carousel-nav-icon: #ffffff;
+    --color--home-carousel-bg: var(--color--white);
+    --color--home-carousel-overlay-start: var(--color--overlay);
+    --color--home-carousel-overlay-middle: var(--color--overlay);
+    --color--home-carousel-overlay-end: var(--color--overlay);
+    --color--home-carousel-title-bg: var(--color--overlay-strong);
+    --color--home-carousel-title-text: var(--color--white);
+    --color--home-carousel-button-bg: var(--color--purple);
+    --color--home-carousel-button-text: var(--color--white);
+    --color--home-carousel-nav-bg: var(--color--overlay-strong);
+    --color--home-carousel-nav-icon: var(--color--white);
 
     --font-size--home-carousel-title: var(--font-size--title-page);
     --font-size--home-carousel-title-tablet: 48px;
@@ -18,19 +18,19 @@
     --font-size--home-carousel-button: var(--font-size--button-md);
     --font-size--home-carousel-button-mobile: var(--font-size--button-md-mobile);
 
-    --color--home-program-cards-bg: #e3c7f0;
-    --color--home-program-cards-card-bg: #d7bfdc;
-    --color--home-program-cards-card-hover-overlay: rgba(128, 128, 128, 0.1);
-    --color--home-program-cards-title-text: #8928c0;
+    --color--home-program-cards-bg: var(--color--surface);
+    --color--home-program-cards-card-bg: var(--color--white);
+    --color--home-program-cards-card-hover-overlay: var(--color--overlay);
+    --color--home-program-cards-title-text: var(--color--purple);
 
     --font-size--home-program-cards-title: var(--font-size--text-xl);
     --font-size--home-program-cards-title-mobile: var(--font-size--title-item-mobile);
 
-    --color--home-intro-bg: #ffffff;
-    --color--home-intro-title-text: #1d1d21;
-    --color--home-intro-text: #26262c;
-    --color--home-intro-button-bg: #8e24c6;
-    --color--home-intro-button-text: #ffffff;
+    --color--home-intro-bg: var(--color--white);
+    --color--home-intro-title-text: var(--color--black);
+    --color--home-intro-text: var(--color--hover-black);
+    --color--home-intro-button-bg: var(--color--purple);
+    --color--home-intro-button-text: var(--color--white);
 
     --font-size--home-intro-title: var(--font-size--title-card);
     --font-size--home-intro-title-mobile: var(--font-size--title-section-mobile);
@@ -39,16 +39,16 @@
     --font-size--home-intro-button: var(--font-size--button-sm);
     --font-size--home-intro-button-mobile: var(--font-size--button-sm-mobile);
 
-    --color--home-featured-bg: #ffffff;
-    --color--home-featured-title-text: #202027;
-    --color--home-featured-text: #26262c;
-    --color--home-featured-media-bg: #000000;
-    --color--home-featured-vk-badge-bg: #2c81e8;
-    --color--home-featured-vk-badge-text: #ffffff;
-    --color--home-featured-placeholder-title-text: #ffffff;
-    --color--home-featured-placeholder-text: rgba(255, 255, 255, 0.72);
-    --color--home-featured-placeholder-link-bg: #2c81e8;
-    --color--home-featured-placeholder-link-text: #ffffff;
+    --color--home-featured-bg: var(--color--white);
+    --color--home-featured-title-text: var(--color--black);
+    --color--home-featured-text: var(--color--hover-black);
+    --color--home-featured-media-bg: var(--color--black);
+    --color--home-featured-vk-badge-bg: var(--color--purple);
+    --color--home-featured-vk-badge-text: var(--color--white);
+    --color--home-featured-placeholder-title-text: var(--color--white);
+    --color--home-featured-placeholder-text: var(--color--white);
+    --color--home-featured-placeholder-link-bg: var(--color--purple);
+    --color--home-featured-placeholder-link-text: var(--color--white);
 
     --font-size--home-featured-title: var(--font-size--title-card);
     --font-size--home-featured-title-mobile: var(--font-size--title-section-mobile);
@@ -59,14 +59,14 @@
     --font-size--home-featured-placeholder-text: var(--font-size--text-base);
     --font-size--home-featured-placeholder-link: var(--font-size--button-sm);
 
-    --color--home-lecturers-bg: #ffffff;
-    --color--home-lecturers-title-text: #1d1d21;
-    --color--home-lecturers-description-text: #2a2a31;
-    --color--home-lecturers-card-bg: #ebd7f2;
-    --color--home-lecturers-name-text: #a483d0;
-    --color--home-lecturers-role-text: #8e24c6;
-    --color--home-lecturers-nav-bg: #8b8b8b;
-    --color--home-lecturers-nav-icon: #ffffff;
+    --color--home-lecturers-bg: var(--color--white);
+    --color--home-lecturers-title-text: var(--color--black);
+    --color--home-lecturers-description-text: var(--color--hover-black);
+    --color--home-lecturers-card-bg: var(--color--surface);
+    --color--home-lecturers-name-text: var(--color--purple);
+    --color--home-lecturers-role-text: var(--color--purple);
+    --color--home-lecturers-nav-bg: var(--color--black);
+    --color--home-lecturers-nav-icon: var(--color--white);
 
     --font-size--home-lecturers-title: var(--font-size--title-card);
     --font-size--home-lecturers-title-mobile: var(--font-size--title-section-mobile);

@@ -1,0 +1,89 @@
+:root {
+    /* Глобальные отступы страницы */
+    --spacing--page-x: 50px;
+    --spacing--page-x-mobile: 24px;
+    --spacing--section-y: 56px;
+    --spacing--section-y-mobile: 40px;
+    --size--page-hero-padding-bottom: var(--spacing--section-y);
+    --size--page-hero-padding-bottom-mobile: var(--spacing--section-y-mobile);
+    --size--page-section-padding-y: var(--spacing--section-y);
+    --size--page-section-padding-y-mobile: var(--spacing--section-y-mobile);
+    --size--home-details-section-padding-y: var(--spacing--section-y);
+    --size--home-details-section-padding-y-mobile: var(--spacing--section-y-mobile);
+
+    /* Главный экран */
+    --size--home-hero-content-max: 760px;
+    --size--home-hero-button-radius: 14px;
+    --size--home-hero-button-radius-mobile: 12px;
+
+    /* Блок карточек программ */
+    --size--home-program-cards-padding-y: var(--spacing--section-y);
+    --size--home-program-cards-padding-y-mobile: var(--spacing--section-y-mobile);
+    --size--home-program-cards-container-max: 1450px;
+    --size--home-program-cards-gap: 34px;
+    --size--home-program-cards-gap-mobile: 28px;
+    --size--home-program-cards-media-radius: 28px;
+    --size--home-program-cards-title-offset: 16px;
+
+    /* Вводный блок */
+    --size--home-intro-padding-y: var(--spacing--section-y);
+    --size--home-intro-padding-y-mobile: var(--spacing--section-y-mobile);
+    --size--home-intro-container-max: 1100px;
+    --size--home-intro-text-max: 860px;
+    --size--home-intro-button-min-width: 320px;
+    --size--home-intro-button-min-height: 72px;
+    --size--home-intro-button-min-height-mobile: 64px;
+    --size--home-intro-button-radius: 16px;
+
+    /* Блок с видео */
+    --size--home-featured-padding-y: var(--spacing--section-y);
+    --size--home-featured-padding-y-mobile: var(--spacing--section-y-mobile);
+    --size--home-featured-container-max: 1460px;
+    --size--home-featured-gap: 48px;
+    --size--home-featured-placeholder-padding: 32px;
+    --size--home-featured-placeholder-gap: 18px;
+    --size--home-featured-link-min-width: 260px;
+    --size--home-featured-link-min-height: 62px;
+    --size--home-featured-link-radius: 14px;
+
+    /* Блок лекторов */
+    --size--home-lecturers-padding-y: var(--spacing--section-y);
+    --size--home-lecturers-padding-y-mobile: var(--spacing--section-y-mobile);
+    --size--home-lecturers-container-max: 1460px;
+    --size--home-lecturers-head-offset: 52px;
+    --size--home-lecturers-head-offset-mobile: 36px;
+    --size--home-lecturers-track-gap: 36px;
+    --size--home-lecturers-track-gap-tablet: 18px;
+    --size--home-lecturers-track-gap-mobile: 12px;
+    --size--home-lecturers-card-radius: 30px;
+    --size--home-lecturers-card-radius-tablet: 20px;
+    --size--home-lecturers-card-radius-mobile: 14px;
+
+    /* Форма консультации */
+    --size--consultation-section-padding-y: var(--spacing--section-y);
+    --size--consultation-section-padding-y-mobile: var(--spacing--section-y-mobile);
+    --size--consultation-section-container-max: 1080px;
+
+    /* Footer */
+    --size--footer-main-padding-top: 78px;
+    --size--footer-main-padding-bottom: 110px;
+    --size--footer-main-padding-top-mobile: 42px;
+    --size--footer-main-padding-bottom-mobile: 40px;
+    --size--footer-main-padding-top-phone: 32px;
+    --size--footer-main-padding-bottom-phone: 28px;
+    --size--footer-container-max: 1500px;
+    --size--footer-container-padding-x: 34px;
+    --size--footer-container-padding-x-mobile: 20px;
+    --size--footer-container-padding-x-phone: 16px;
+    --size--footer-main-gap: 90px;
+    --size--footer-main-gap-tablet: 40px;
+    --size--footer-main-gap-mobile: 28px;
+    --size--footer-main-gap-phone: 22px;
+    --size--footer-columns-gap: 82px;
+    --size--footer-columns-gap-tablet: 40px;
+    --size--footer-columns-gap-mobile: 26px;
+    --size--footer-columns-gap-phone: 22px;
+    --size--footer-bottom-gap: 24px;
+    --size--footer-bottom-gap-mobile: 12px;
+    --size--footer-bottom-gap-phone: 10px;
+}

@@ -32,12 +32,15 @@ defineProps({
 
 <style scoped>
 .home-intro {
-  padding: 88px var(--spacing--page-x) 76px;
+  padding:
+    var(--size--home-intro-padding-y)
+    var(--spacing--page-x)
+    var(--size--home-intro-padding-y);
   background: var(--color--home-intro-bg);
 }
 
 .home-intro__container {
-  max-width: 1100px;
+  max-width: var(--size--home-intro-container-max);
   margin: 0;
 }
 
@@ -45,12 +48,12 @@ defineProps({
   margin: 0 0 28px;
   color: var(--color--home-intro-title-text);
   font-size: var(--font-size--home-intro-title);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.12;
 }
 
 .home-intro__text {
-  max-width: 860px;
+  max-width: var(--size--home-intro-text-max);
   margin: 0 0 28px;
   color: var(--color--home-intro-text);
   font-size: var(--font-size--home-intro-text);
@@ -61,11 +64,11 @@ defineProps({
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 320px;
-  min-height: 72px;
+  min-width: var(--size--home-intro-button-min-width);
+  min-height: var(--size--home-intro-button-min-height);
   margin-top: 12px;
   padding: 0 32px;
-  border-radius: 16px;
+  border-radius: var(--size--home-intro-button-radius);
   background: var(--color--home-intro-button-bg);
   color: var(--color--home-intro-button-text);
   text-decoration: none;
@@ -76,7 +79,10 @@ defineProps({
 
 @media (max-width: 900px) {
   .home-intro {
-    padding: 64px var(--spacing--page-x-mobile) 56px;
+    padding:
+      var(--size--home-intro-padding-y-mobile)
+      var(--spacing--page-x-mobile)
+      var(--size--home-intro-padding-y-mobile);
   }
 
   .home-intro__title {
@@ -89,7 +95,7 @@ defineProps({
 
   .home-intro__button {
     min-width: 100%;
-    min-height: 64px;
+    min-height: var(--size--home-intro-button-min-height-mobile);
     font-size: var(--font-size--home-intro-button-mobile);
   }
 }

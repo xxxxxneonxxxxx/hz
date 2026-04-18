@@ -29,7 +29,7 @@ defineProps({
 
 <style scoped>
 .student-wins {
-  padding: 64px var(--spacing--page-x) 88px;
+  padding: var(--spacing--school-section-y) var(--spacing--page-x);
   background: var(--color--school-page-bg);
 }
 
@@ -42,18 +42,20 @@ defineProps({
   margin: 0 0 28px;
   color: var(--color--school-wins-title);
   font-size: var(--font-size--school-wins-title);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.08;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
 }
 
 .student-wins__description {
   max-width: 1480px;
-  margin: 0 auto 56px;
+  margin: 0 0 56px;
   color: var(--color--school-wins-text);
   font-size: var(--font-size--school-wins-text);
   line-height: 1.5;
+  text-align: justify;
+  text-wrap: pretty;
 }
 
 .student-wins__grid {
@@ -89,16 +91,21 @@ defineProps({
 
 @media (max-width: 900px) {
   .student-wins {
-    padding: 40px var(--spacing--page-x-mobile) 64px;
+    padding: var(--spacing--school-section-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .student-wins__title {
     font-size: var(--font-size--school-wins-title-mobile);
+    text-align: center;
   }
 
   .student-wins__description,
   .student-wins__text {
     font-size: var(--font-size--school-wins-text-mobile);
+  }
+
+  .student-wins__description {
+    text-align: left;
   }
 
   .student-wins__value {

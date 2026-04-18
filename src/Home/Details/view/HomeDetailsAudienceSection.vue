@@ -41,7 +41,7 @@ defineProps({
 
 <style scoped>
 .home-details-audience {
-  padding: 96px var(--spacing--page-x) 110px;
+  padding: var(--size--home-details-section-padding-y) var(--spacing--page-x);
   background: var(--color--home-details-audience-bg);
 }
 
@@ -54,9 +54,9 @@ defineProps({
   margin: 0 0 56px;
   color: var(--color--home-details-audience-title);
   font-size: var(--font-size--home-details-audience-title);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.08;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
 }
 
@@ -98,12 +98,13 @@ defineProps({
 
 @media (max-width: 900px) {
   .home-details-audience {
-    padding: 72px var(--spacing--page-x-mobile) 80px;
+    padding: var(--size--home-details-section-padding-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .home-details-audience__title {
     margin-bottom: 40px;
     font-size: var(--font-size--home-details-audience-title-mobile);
+    text-align: center;
   }
 
   .home-details-audience__card-title {

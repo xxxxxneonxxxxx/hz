@@ -53,7 +53,7 @@ defineEmits(['open-consultation'])
 
 <style scoped>
 .home-details-benefits {
-  padding: 96px var(--spacing--page-x) 110px;
+  padding: var(--size--home-details-section-padding-y) var(--spacing--page-x);
   background: var(--color--home-details-benefits-bg);
 }
 
@@ -134,7 +134,7 @@ defineEmits(['open-consultation'])
 
 @media (max-width: 900px) {
   .home-details-benefits {
-    padding: 64px var(--spacing--page-x-mobile) 72px;
+    padding: var(--size--home-details-section-padding-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .home-details-benefits__title {

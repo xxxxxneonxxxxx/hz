@@ -46,8 +46,8 @@ defineProps({
 
 <style scoped>
 .home-details-pricing-table {
-  padding: 96px var(--spacing--page-x) 110px;
-  background: #ffffff;
+  padding: var(--size--home-details-section-padding-y) var(--spacing--page-x);
+  background: var(--color--home-details-pricing-table-bg);
 }
 
 .home-details-pricing-table__container {
@@ -68,9 +68,9 @@ defineProps({
 .home-details-pricing-table__head,
 .home-details-pricing-table__feature,
 .home-details-pricing-table__cell {
-  border: 1px solid #d9d9d9;
+  border: 1px solid var(--color--home-details-pricing-table-border);
   padding: 22px 28px;
-  color: #242429;
+  color: var(--color--home-details-pricing-table-text);
   font-size: 22px;
   line-height: 1.45;
   text-align: left;
@@ -93,7 +93,7 @@ defineProps({
 
 @media (max-width: 900px) {
   .home-details-pricing-table {
-    padding: 72px var(--spacing--page-x-mobile) 80px;
+    padding: var(--size--home-details-section-padding-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .home-details-pricing-table__head,

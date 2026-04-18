@@ -1,10 +1,10 @@
 :root {
-  --color--app-carousel-bg: #ffffff;
-  --color--app-carousel-title: #121217;
-  --color--app-carousel-nav-bg: rgba(26, 26, 31, 0.72);
-  --color--app-carousel-nav-icon: #ffffff;
-  --color--app-carousel-button-bg: #8e24c6;
-  --color--app-carousel-button-text: #ffffff;
+  --color--app-carousel-bg: var(--color--white);
+  --color--app-carousel-title: var(--color--black);
+  --color--app-carousel-nav-bg: var(--color--overlay-strong);
+  --color--app-carousel-nav-icon: var(--color--white);
+  --color--app-carousel-button-bg: var(--color--purple);
+  --color--app-carousel-button-text: var(--color--white);
 
   --font-size--app-carousel-title: var(--font-size--title-section);
   --font-size--app-carousel-title-mobile: var(--font-size--title-section-mobile);

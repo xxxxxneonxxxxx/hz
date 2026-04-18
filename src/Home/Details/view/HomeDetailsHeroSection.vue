@@ -47,7 +47,7 @@ defineEmits(['open-consultation'])
 
 <style scoped>
 .home-details-hero {
-  padding: var(--size--header-current-offset) var(--spacing--page-x) 88px;
+  padding: var(--size--header-current-offset) var(--spacing--page-x) var(--size--page-hero-padding-bottom);
   background: var(--color--home-details-hero-bg);
 }
 
@@ -75,7 +75,7 @@ defineEmits(['open-consultation'])
   margin: 0;
   color: var(--color--home-details-title-text);
   font-size: var(--font-size--home-details-title);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 0.96;
   text-transform: uppercase;
   align-items: flex-start;
@@ -96,6 +96,8 @@ defineEmits(['open-consultation'])
   font-size: var(--font-size--home-details-description);
   font-weight: 400;
   line-height: 1.38;
+  text-align: justify;
+  text-wrap: pretty;
 }
 
 .home-details-hero__button {
@@ -132,7 +134,7 @@ defineEmits(['open-consultation'])
 
 @media (max-width: 1100px) {
   .home-details-hero {
-    padding: var(--size--header-current-offset) var(--spacing--page-x) 72px;
+    padding: var(--size--header-current-offset) var(--spacing--page-x) var(--size--page-hero-padding-bottom);
   }
 
   .home-details-hero__layout {
@@ -149,16 +151,18 @@ defineEmits(['open-consultation'])
 
 @media (max-width: 900px) {
   .home-details-hero {
-    padding: var(--size--header-current-offset) var(--spacing--page-x-mobile) 56px;
+    padding: var(--size--header-current-offset) var(--spacing--page-x-mobile) var(--size--page-hero-padding-bottom-mobile);
   }
 
   .home-details-hero__title {
     font-size: var(--font-size--home-details-title-mobile);
+    align-items: center;
   }
 
   .home-details-hero__description {
     margin-top: 24px;
     font-size: var(--font-size--home-details-description-mobile);
+    text-align: left;
   }
 
   .home-details-hero__button {

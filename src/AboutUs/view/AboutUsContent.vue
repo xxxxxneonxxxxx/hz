@@ -123,7 +123,7 @@ defineProps({
   margin: 0 0 26px;
   color: var(--color--school-section-title);
   font-size: var(--font-size--school-section-title);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.1;
   text-transform: uppercase;
 }
@@ -133,6 +133,8 @@ defineProps({
   color: var(--color--school-text);
   font-size: var(--font-size--school-text);
   line-height: var(--line-height--school-text);
+  text-align: justify;
+  text-wrap: pretty;
 }
 
 .school-page__text:last-child {
@@ -152,9 +154,9 @@ defineProps({
   margin: 0 0 28px;
   color: var(--color--school-text-on-accent);
   font-size: var(--font-size--school-section-title);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.1;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
 }
 
@@ -163,6 +165,8 @@ defineProps({
   color: var(--color--school-text-on-accent);
   font-size: var(--font-size--school-text);
   line-height: var(--line-height--school-text);
+  text-align: justify;
+  text-wrap: pretty;
 }
 
 .school-page__accent-text:last-child {
@@ -188,11 +192,13 @@ defineProps({
   .school-page__section-title,
   .school-page__accent-title {
     font-size: var(--font-size--school-section-title-mobile);
+    text-align: center;
   }
 
   .school-page__text,
   .school-page__accent-text {
     font-size: var(--font-size--school-text-mobile);
+    text-align: left;
   }
 
   .school-page__image {

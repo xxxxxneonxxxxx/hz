@@ -103,9 +103,9 @@ onMounted(() => {
 }
 
 .news-page__hero {
-  padding: var(--size--header-current-offset) var(--spacing--page-x) 64px;
+  padding: var(--size--header-current-offset) var(--spacing--page-x) var(--size--page-hero-padding-bottom);
   background: var(--color--news-hero-bg);
-  text-align: center;
+  text-align: left;
 }
 
 .news-page__container {
@@ -117,13 +117,14 @@ onMounted(() => {
   margin: 0 0 24px;
   color: var(--color--news-title-text);
   font-size: var(--font-size--news-title);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.05;
 }
 
 .news-page__breadcrumbs {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 10px;
   margin: 0;
   color: var(--color--news-breadcrumb-text);
@@ -137,7 +138,7 @@ onMounted(() => {
 }
 
 .news-page__grid {
-  padding: 56px var(--spacing--page-x) 96px;
+  padding: var(--size--page-section-padding-y) var(--spacing--page-x);
 }
 
 .news-page__list {
@@ -177,7 +178,7 @@ onMounted(() => {
 }
 
 .news-page__image--placeholder {
-  background: #ececf3;
+  background: var(--color--news-card-border);
 }
 
 .news-page__overlay {
@@ -197,7 +198,7 @@ onMounted(() => {
 }
 
 .news-page__line {
-  background: #ececf3;
+  background: var(--color--news-card-border);
 }
 
 .news-page__line--title {
@@ -234,20 +235,23 @@ onMounted(() => {
 
 @media (max-width: 900px) {
   .news-page__hero {
-    padding: var(--size--header-current-offset) var(--spacing--page-x-mobile) 40px;
+    padding: var(--size--header-current-offset) var(--spacing--page-x-mobile) var(--size--page-hero-padding-bottom-mobile);
+    text-align: center;
   }
 
   .news-page__title {
     font-size: var(--font-size--news-title-mobile);
+    text-align: center;
   }
 
   .news-page__breadcrumbs {
     gap: 6px;
     font-size: var(--font-size--news-breadcrumbs-mobile);
+    justify-content: center;
   }
 
   .news-page__grid {
-    padding: 32px var(--spacing--page-x-mobile) 64px;
+    padding: var(--size--page-section-padding-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .news-page__list {

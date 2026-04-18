@@ -1,0 +1,38 @@
+:root {
+    /* Базовые длительности */
+    --motion-duration-fast: 0.18s;
+    --motion-duration-base: 0.28s;
+    --motion-duration-slow: 0.42s;
+    --motion-duration-hero: 0.56s;
+    --motion-duration-carousel: 1.5s;
+
+    /* Единые кривые движения */
+    --motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+    --motion-ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
+    --motion-ease-emphasis: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --motion-ease-carousel: cubic-bezier(0.16, 1, 0.3, 1);
+
+    /* Типовые переходы интерфейса */
+    --motion-transition-color:
+        color var(--motion-duration-fast) var(--motion-ease-soft),
+        background-color var(--motion-duration-base) var(--motion-ease-soft),
+        border-color var(--motion-duration-base) var(--motion-ease-soft);
+    --motion-transition-surface:
+        background-color var(--motion-duration-base) var(--motion-ease-soft),
+        border-color var(--motion-duration-base) var(--motion-ease-soft),
+        box-shadow var(--motion-duration-base) var(--motion-ease-standard),
+        transform var(--motion-duration-base) var(--motion-ease-standard);
+    --motion-transition-emphasis:
+        opacity var(--motion-duration-base) var(--motion-ease-soft),
+        transform var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --motion-duration-fast: 0.01ms;
+        --motion-duration-base: 0.01ms;
+        --motion-duration-slow: 0.01ms;
+        --motion-duration-hero: 0.01ms;
+        --motion-duration-carousel: 0.01ms;
+    }
+}

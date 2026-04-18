@@ -1,0 +1,22 @@
+:root {
+    /* Основные цвета сайта */
+    --color--black: #111111;
+    --color--purple: #8b2cc3;
+    --color--white: #ffffff;
+
+    /* Hover / active */
+    --color--hover: #7c29aa;
+    --color--hover-black: #2a2a31;
+
+    /* Состояния */
+    --color--error: #c53d32;
+    --color--success: #1f8f52;
+
+    /* Служебные цвета */
+    --color--border: #d9d9d9;
+    --color--surface: #f3f3f5;
+    --color--surface-alt: #ececf3;
+    --color--overlay: rgba(0, 0, 0, 0.34);
+    --color--overlay-strong: rgba(17, 17, 17, 0.72);
+    --color--shadow: rgba(0, 0, 0, 0.28);
+}

@@ -1,9 +1,9 @@
 :root {
-    --color--header-accent: rgb(124, 41, 170);
-    --color--header-topbar: rgb(87,27,149);
-    --color--header-navbar: rgba(124, 41, 170, 1);
-    --color--header-text: #f8f4ec;
-    --color--header-text-dark: #171412;
+    --color--header-accent: var(--color--purple);
+    --color--header-topbar: var(--color--black);
+    --color--header-navbar: var(--color--purple);
+    --color--header-text: var(--color--white);
+    --color--header-text-dark: var(--color--black);
 
     --font-size--header-topbar-contact: 12px;
     --font-size--header-topbar-contact-mobile: 11px;
@@ -21,4 +21,36 @@
 
 html.header-scrolled {
     --size--header-current-offset: var(--size--header-navbar-height-scrolled);
+}
+
+@media (max-width: 768px) {
+    :root {
+        --size--header-topbar-height: 0px;
+        --size--header-navbar-height: 82px;
+        --size--header-navbar-height-scrolled: 72px;
+        --size--header-logo-height: 54px;
+        --size--header-logo-height-scrolled: 46px;
+        --size--header-offset: calc(var(--size--header-topbar-height) + var(--size--header-navbar-height));
+        --size--header-current-offset: var(--size--header-offset);
+    }
+
+    html.header-scrolled {
+        --size--header-current-offset: var(--size--header-navbar-height-scrolled);
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --size--header-topbar-height: 0px;
+        --size--header-navbar-height: 74px;
+        --size--header-navbar-height-scrolled: 66px;
+        --size--header-logo-height: 48px;
+        --size--header-logo-height-scrolled: 42px;
+        --size--header-offset: calc(var(--size--header-topbar-height) + var(--size--header-navbar-height));
+        --size--header-current-offset: var(--size--header-offset);
+    }
+
+    html.header-scrolled {
+        --size--header-current-offset: var(--size--header-navbar-height-scrolled);
+    }
 }

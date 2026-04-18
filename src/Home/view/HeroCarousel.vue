@@ -127,9 +127,8 @@ onBeforeUnmount(() => {
 .hero-carousel__viewport {
   position: relative;
   width: 100%;
-  height: 78vh;
-  min-height: 560px;
-  max-height: 860px;
+  height: 100svh;
+  min-height: 720px;
   overflow: hidden;
 }
 
@@ -143,10 +142,13 @@ onBeforeUnmount(() => {
 
 .hero-carousel__overlay {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   width: 100%;
   height: 100%;
-  padding: 88px var(--spacing--page-x) 84px;
+  padding:
+      calc(var(--size--header-offset) + 40px)
+      var(--spacing--page-x)
+      96px;
   background:
       linear-gradient(
           90deg,
@@ -160,18 +162,17 @@ onBeforeUnmount(() => {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 1320px;
+  max-width: 760px;
 }
 
 .hero-carousel__title {
-  display: inline-block;
   margin: 0;
-  padding: 18px 32px 22px;
-  background: var(--color--home-carousel-title-bg);
   color: var(--color--home-carousel-title-text);
   font-size: var(--font-size--home-carousel-title);
-  font-weight: 300;
-  line-height: 1.05;
+  font-weight: 700;
+  line-height: 0.98;
+  text-wrap: balance;
+  text-shadow: 0 12px 36px rgba(0, 0, 0, 0.32);
 }
 
 .hero-carousel__button {
@@ -180,7 +181,7 @@ onBeforeUnmount(() => {
   justify-content: center;
   min-width: 280px;
   min-height: 80px;
-  margin-top: 56px;
+  margin-top: 40px;
   padding: 0 34px;
   border-radius: 14px;
   background: var(--color--home-carousel-button-bg);
@@ -188,6 +189,13 @@ onBeforeUnmount(() => {
   text-decoration: none;
   font-size: var(--font-size--home-carousel-button);
   font-weight: 700;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  transition: var(--motion-transition-surface), color var(--motion-duration-fast) var(--motion-ease-soft);
+}
+
+.hero-carousel__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.24);
 }
 
 .hero-carousel__nav {
@@ -205,6 +213,7 @@ onBeforeUnmount(() => {
   color: var(--color--home-carousel-nav-icon);
   transform: translateY(-50%);
   cursor: pointer;
+  transition: var(--motion-transition-surface), color var(--motion-duration-fast) var(--motion-ease-soft);
 }
 
 .hero-carousel__nav svg {
@@ -226,24 +235,35 @@ onBeforeUnmount(() => {
   right: 0;
 }
 
+.hero-carousel__nav:hover {
+  background: rgba(0, 0, 0, 0.34);
+}
+
 .hero-fade-enter-active,
 .hero-fade-leave-active {
-  transition: opacity 0.45s ease;
+  transition:
+    opacity var(--motion-duration-carousel) var(--motion-ease-soft),
+    transform var(--motion-duration-carousel) var(--motion-ease-carousel),
+    filter var(--motion-duration-carousel) var(--motion-ease-soft);
 }
 
 .hero-fade-enter-from,
 .hero-fade-leave-to {
   opacity: 0;
+  transform: scale(1.01);
+  filter: saturate(0.96);
 }
 
 @media (max-width: 1280px) {
   .hero-carousel__viewport {
-    min-height: 500px;
-    height: 70vh;
+    min-height: 640px;
   }
 
   .hero-carousel__overlay {
-    padding: 76px var(--spacing--page-x) 64px;
+    padding:
+        calc(var(--size--header-offset) + 28px)
+        var(--spacing--page-x)
+        72px;
   }
 
   .hero-carousel__title {
@@ -253,35 +273,62 @@ onBeforeUnmount(() => {
 
 @media (max-width: 900px) {
   .hero-carousel__viewport {
+    height: clamp(420px, 58svh, 560px);
     min-height: 420px;
-    height: 62vh;
   }
 
   .hero-carousel__overlay {
-    align-items: flex-end;
-    padding: 48px var(--spacing--page-x-mobile) 42px;
+    align-items: center;
+    padding:
+        calc(var(--size--header-offset) + 12px)
+        var(--spacing--page-x-mobile)
+        28px;
+  }
+
+  .hero-carousel__content {
+    max-width: 320px;
   }
 
   .hero-carousel__title {
-    padding: 14px 20px 16px;
+    max-width: 280px;
     font-size: var(--font-size--home-carousel-title-mobile);
-  }
-
-  .hero-carousel__button {
-    min-width: 200px;
-    min-height: 64px;
-    margin-top: 32px;
-    font-size: var(--font-size--home-carousel-button-mobile);
+    line-height: 1.06;
+    text-wrap: pretty;
   }
 
   .hero-carousel__nav {
-    width: 36px;
-    height: 36px;
-  }
-
-  .hero-carousel__nav svg {
-    width: 14px;
-    height: 14px;
+    display: none;
   }
 }
+
+@media (max-width: 480px) {
+  .hero-carousel__viewport {
+    height: clamp(360px, 52svh, 500px);
+    min-height: 360px;
+  }
+
+  .hero-carousel__overlay {
+    padding:
+        calc(var(--size--header-offset) + 8px)
+        20px
+        22px;
+  }
+
+  .hero-carousel__content {
+    max-width: 260px;
+  }
+
+  .hero-carousel__title {
+    max-width: 240px;
+    font-size: 26px;
+  }
+
+  .hero-carousel__button {
+    min-width: 170px;
+    min-height: 52px;
+    margin-top: 18px;
+    font-size: 18px;
+  }
+}
+
 </style>

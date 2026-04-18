@@ -1,11 +1,11 @@
 :root {
-    --color--footer-bg: linear-gradient(180deg, #8f25c7 0%, #8c21c4 100%);
-    --color--footer-surface: #191919;
-    --color--footer-text: rgba(255, 255, 255, 0.78);
-    --color--footer-title: #ffffff;
-    --color--footer-muted: rgba(255, 255, 255, 0.42);
-    --color--footer-accent: #ffffff;
-    --color--footer-social: rgba(255, 255, 255, 0.88);
+    --color--footer-bg: var(--color--purple);
+    --color--footer-surface: var(--color--black);
+    --color--footer-text: var(--color--white);
+    --color--footer-title: var(--color--white);
+    --color--footer-muted: var(--color--white);
+    --color--footer-accent: var(--color--white);
+    --color--footer-social: var(--color--white);
 
     --font-size--footer-title: var(--font-size--subtitle-sm);
     --font-size--footer-link: var(--font-size--text-base);

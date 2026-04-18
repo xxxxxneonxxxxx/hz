@@ -1,17 +1,17 @@
 :root {
-  --color--news-page-bg: #ffffff;
-  --color--news-hero-bg: #f4f4f8;
-  --color--news-title-text: #1d1d21;
-  --color--news-breadcrumb-text: #2a2a31;
-  --color--news-breadcrumb-link: #2a2a31;
-  --color--news-card-bg: #ffffff;
-  --color--news-card-border: #ececf3;
-  --color--news-card-title: #9a77cc;
-  --color--news-card-date: #1d1d21;
-  --color--news-card-overlay: rgba(143, 33, 201, 0.4);
-  --color--news-load-more-bg: #8f21c9;
-  --color--news-load-more-text: #ffffff;
-  --color--news-text: #222222;
+  --color--news-page-bg: var(--color--white);
+  --color--news-hero-bg: var(--color--surface);
+  --color--news-title-text: var(--color--black);
+  --color--news-breadcrumb-text: var(--color--black);
+  --color--news-breadcrumb-link: var(--color--black);
+  --color--news-card-bg: var(--color--white);
+  --color--news-card-border: var(--color--border);
+  --color--news-card-title: var(--color--purple);
+  --color--news-card-date: var(--color--black);
+  --color--news-card-overlay: var(--color--overlay);
+  --color--news-load-more-bg: var(--color--purple);
+  --color--news-load-more-text: var(--color--white);
+  --color--news-text: var(--color--black);
 
   --font-size--news-title: var(--font-size--title-hero);
   --font-size--news-title-mobile: var(--font-size--title-hero-mobile);

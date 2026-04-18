@@ -67,9 +67,9 @@ watch(
 }
 
 .news-item__hero {
-  padding: var(--size--header-current-offset) var(--spacing--page-x) 64px;
+  padding: var(--size--header-current-offset) var(--spacing--page-x) var(--size--page-hero-padding-bottom);
   background: var(--color--news-hero-bg);
-  text-align: center;
+  text-align: left;
 }
 
 .news-item__container {
@@ -85,13 +85,14 @@ watch(
   margin: 0 0 24px;
   color: var(--color--news-title-text);
   font-size: var(--font-size--news-title);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.05;
 }
 
 .news-item__breadcrumbs {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 10px;
   margin: 0;
   color: var(--color--news-breadcrumb-text);
@@ -105,7 +106,7 @@ watch(
 }
 
 .news-item__content {
-  padding: 56px var(--spacing--page-x) 96px;
+  padding: var(--size--page-section-padding-y) var(--spacing--page-x);
 }
 
 .news-item__image {
@@ -128,6 +129,8 @@ watch(
   color: var(--color--news-text);
   font-size: var(--font-size--news-text);
   line-height: 1.55;
+  text-align: justify;
+  text-wrap: pretty;
 }
 
 .news-item__text:last-child {
@@ -136,20 +139,23 @@ watch(
 
 @media (max-width: 900px) {
   .news-item__hero {
-    padding: var(--size--header-current-offset) var(--spacing--page-x-mobile) 40px;
+    padding: var(--size--header-current-offset) var(--spacing--page-x-mobile) var(--size--page-hero-padding-bottom-mobile);
+    text-align: center;
   }
 
   .news-item__title {
     font-size: var(--font-size--news-title-mobile);
+    text-align: center;
   }
 
   .news-item__breadcrumbs {
     gap: 6px;
     font-size: var(--font-size--news-breadcrumbs-mobile);
+    justify-content: center;
   }
 
   .news-item__content {
-    padding: 32px var(--spacing--page-x-mobile) 64px;
+    padding: var(--size--page-section-padding-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .news-item__date {
@@ -158,6 +164,7 @@ watch(
 
   .news-item__text {
     font-size: var(--font-size--news-text-mobile);
+    text-align: left;
   }
 }
 </style>

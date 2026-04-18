@@ -81,9 +81,17 @@ const viewportRef = ref(null)
 const isTransitionEnabled = ref(true)
 let resizeObserver = null
 
-const visibleCards = computed(() => (viewportWidth.value <= 1100 ? 3 : 4))
+const visibleCards = computed(() => {
+  if (viewportWidth.value <= 900) return 1
+  if (viewportWidth.value <= 1100) return 2
+  return 4
+})
 const safeVisibleCards = computed(() => Math.max(Math.min(visibleCards.value, props.reviews.length || 1), 1))
-const gap = computed(() => (viewportWidth.value <= 700 ? 12 : viewportWidth.value <= 1100 ? 18 : 24))
+const gap = computed(() => {
+  if (viewportWidth.value <= 900) return 0
+  if (viewportWidth.value <= 1100) return 18
+  return 24
+})
 const showNavigation = computed(() => props.reviews.length > safeVisibleCards.value)
 const leadingClones = computed(() => props.reviews.slice(-safeVisibleCards.value))
 const trailingClones = computed(() => props.reviews.slice(0, safeVisibleCards.value))
@@ -96,7 +104,9 @@ const translateX = computed(() => currentIndex.value * (cardWidth.value + gap.va
 const trackStyle = computed(() => ({
   transform: `translateX(-${translateX.value}px)`,
   gap: `${gap.value}px`,
-  transition: isTransitionEnabled.value ? 'transform 0.35s ease' : 'none',
+  transition: isTransitionEnabled.value
+    ? 'transform var(--motion-duration-carousel) var(--motion-ease-carousel)'
+    : 'none',
 }))
 
 function syncViewportWidth() {
@@ -261,6 +271,7 @@ watch(safeVisibleCards, (value) => {
   color: var(--color--student-works-script-room-nav-icon);
   transform: translateY(-50%);
   cursor: pointer;
+  transition: var(--motion-transition-surface), color var(--motion-duration-fast) var(--motion-ease-soft);
 }
 
 .student-works-reviews__nav--prev {
@@ -281,6 +292,10 @@ watch(safeVisibleCards, (value) => {
   fill: none;
 }
 
+.student-works-reviews__nav:hover {
+  background: rgba(0, 0, 0, 0.34);
+}
+
 @media (max-width: 1100px) {
   .student-works-reviews__nav--prev {
     left: 0;
@@ -292,6 +307,10 @@ watch(safeVisibleCards, (value) => {
 }
 
 @media (max-width: 900px) {
+  .student-works-reviews {
+    margin-bottom: 40px;
+  }
+
   .student-works-reviews__media {
     border-radius: 18px;
   }
@@ -299,10 +318,17 @@ watch(safeVisibleCards, (value) => {
   .student-works-reviews__text {
     margin-top: 16px;
     font-size: var(--font-size--student-works-script-room-card-text-mobile);
+    text-align: left;
   }
 
   .student-works-reviews__text strong {
     font-size: var(--font-size--student-works-script-room-name-mobile);
+  }
+
+  .student-works-reviews__nav {
+    width: 52px;
+    height: 52px;
+    top: min(42vw, 220px);
   }
 }
 
@@ -312,8 +338,6 @@ watch(safeVisibleCards, (value) => {
   }
 
   .student-works-reviews__nav {
-    width: 52px;
-    height: 52px;
     top: calc(50% - 34px);
   }
 

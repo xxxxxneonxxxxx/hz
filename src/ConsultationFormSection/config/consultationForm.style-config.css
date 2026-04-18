@@ -1,19 +1,19 @@
 :root {
-    --color--consultation-form-bg: #ffffff;
-    --color--consultation-form-title-text: #2526c9;
-    --color--consultation-form-input-bg: #ffffff;
-    --color--consultation-form-input-border: #8d8d8d;
-    --color--consultation-form-input-text: #2a2a31;
-    --color--consultation-form-input-placeholder: #bcbcbc;
-    --color--consultation-form-button-bg: #e33f36;
-    --color--consultation-form-button-text: #ffffff;
-    --color--consultation-form-agreement-text: #222228;
-    --color--consultation-form-agreement-link: #3a86d9;
-    --color--consultation-form-message-success: #1f8f52;
-    --color--consultation-form-message-error: #c53d32;
-    --color--consultation-form-modal-overlay: rgba(16, 10, 22, 0.72);
-    --color--consultation-form-modal-surface: #ffffff;
-    --color--consultation-form-modal-close: #4e3962;
+    --color--consultation-form-bg: var(--color--white);
+    --color--consultation-form-title-text: var(--color--black);
+    --color--consultation-form-input-bg: var(--color--white);
+    --color--consultation-form-input-border: var(--color--border);
+    --color--consultation-form-input-text: var(--color--black);
+    --color--consultation-form-input-placeholder: var(--color--hover-black);
+    --color--consultation-form-button-bg: var(--color--purple);
+    --color--consultation-form-button-text: var(--color--white);
+    --color--consultation-form-agreement-text: var(--color--black);
+    --color--consultation-form-agreement-link: var(--color--black);
+    --color--consultation-form-message-success: var(--color--success);
+    --color--consultation-form-message-error: var(--color--error);
+    --color--consultation-form-modal-overlay: var(--color--overlay-strong);
+    --color--consultation-form-modal-surface: var(--color--white);
+    --color--consultation-form-modal-close: var(--color--black);
 
     --font-size--consultation-form-title: var(--font-size--title-card);
     --font-size--consultation-form-title-mobile: var(--font-size--title-card-mobile);

@@ -1,6 +1,6 @@
 <template>
   <section class="home-page">
-    <HeroCarousel :slides="heroSlides" />
+    <AppCarouselSection :section="heroCarouselSection" variant="hero" />
     <ProgramCardsSection :cards="programCards" />
     <HomeIntroSection :section="introSection" />
     <FeaturedSeriesSection :section="featuredSeries" />
@@ -10,10 +10,11 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import ConsultationFormSection from '../../ConsultationFormSection/view/ConsultationFormSection.vue'
+import AppCarouselSection from '../../Carousel/view/AppCarouselSection.vue'
 import { useHomeModel } from '../model/homeModel.js'
 import FeaturedSeriesSection from './FeaturedSeriesSection.vue'
-import HeroCarousel from './HeroCarousel.vue'
 import HomeIntroSection from './HomeIntroSection.vue'
 import LecturersSection from './LecturersSection.vue'
 import ProgramCardsSection from './ProgramCardsSection.vue'
@@ -27,6 +28,18 @@ const {
   lecturers,
   consultationForm,
 } = useHomeModel()
+
+const heroCarouselSection = computed(() => ({
+  ariaLabel: 'Главный слайдер',
+  intervalMs: 20000,
+  slides: heroSlides.map((slide) => ({
+    ...slide,
+    action: {
+      label: 'Подробнее',
+      to: slide.href,
+    },
+  })),
+}))
 </script>
 
 <style scoped>

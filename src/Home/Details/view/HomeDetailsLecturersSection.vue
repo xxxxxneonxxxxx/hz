@@ -128,7 +128,7 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .home-details-lecturers {
-  padding: 96px var(--spacing--page-x) 110px;
+  padding: var(--size--home-details-section-padding-y) var(--spacing--page-x);
   background: var(--color--home-details-lecturers-bg);
 }
 
@@ -139,24 +139,26 @@ onBeforeUnmount(() => {
 
 .home-details-lecturers__head {
   margin-bottom: 52px;
-  text-align: center;
+  text-align: left;
 }
 
 .home-details-lecturers__title {
   margin: 0 0 24px;
   color: var(--color--home-details-lecturers-title);
   font-size: var(--font-size--home-details-lecturers-title);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.08;
   text-transform: uppercase;
 }
 
 .home-details-lecturers__description {
   max-width: 1180px;
-  margin: 0 auto;
+  margin: 0;
   color: var(--color--home-details-lecturers-description);
   font-size: var(--font-size--home-details-lecturers-description);
   line-height: 1.4;
+  text-align: justify;
+  text-wrap: pretty;
 }
 
 .home-details-lecturers__carousel {
@@ -170,7 +172,7 @@ onBeforeUnmount(() => {
 .home-details-lecturers__track {
   display: flex;
   gap: 36px;
-  transition: transform 0.35s ease;
+  transition: transform var(--motion-duration-carousel) var(--motion-ease-carousel);
   will-change: transform;
 }
 
@@ -214,14 +216,16 @@ onBeforeUnmount(() => {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 52px;
+  height: 52px;
   padding: 0;
   border: 0;
+  border-radius: 14px;
   background: var(--color--home-details-lecturers-nav-bg);
   color: var(--color--home-details-lecturers-nav-icon);
   transform: translateY(-50%);
   cursor: pointer;
+  transition: var(--motion-transition-surface), color var(--motion-duration-fast) var(--motion-ease-soft);
 }
 
 .home-details-lecturers__nav--prev {
@@ -233,13 +237,17 @@ onBeforeUnmount(() => {
 }
 
 .home-details-lecturers__nav svg {
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
   stroke: currentColor;
-  stroke-width: 2;
+  stroke-width: 2.4;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+}
+
+.home-details-lecturers__nav:hover {
+  background: rgba(0, 0, 0, 0.34);
 }
 
 @media (max-width: 1100px) {
@@ -254,7 +262,7 @@ onBeforeUnmount(() => {
 
 @media (max-width: 900px) {
   .home-details-lecturers {
-    padding: 72px var(--spacing--page-x-mobile) 80px;
+    padding: var(--size--home-details-section-padding-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .home-details-lecturers__head {
@@ -264,10 +272,12 @@ onBeforeUnmount(() => {
   .home-details-lecturers__title {
     margin-bottom: 18px;
     font-size: var(--font-size--home-details-lecturers-title-mobile);
+    text-align: center;
   }
 
   .home-details-lecturers__description {
     font-size: var(--font-size--home-details-lecturers-description-mobile);
+    text-align: left;
   }
 
   .home-details-lecturers__name {

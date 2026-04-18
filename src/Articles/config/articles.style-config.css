@@ -1,14 +1,14 @@
 :root {
-  --color--articles-page-bg: #ffffff;
-  --color--articles-hero-bg: #f4f4f8;
-  --color--articles-title-text: #1d1d21;
-  --color--articles-breadcrumb-text: #2a2a31;
-  --color--articles-breadcrumb-link: #2a2a31;
-  --color--articles-card-bg: #ffffff;
-  --color--articles-card-border: #ececf3;
-  --color--articles-card-title: #9a77cc;
-  --color--articles-card-overlay: rgba(143, 33, 201, 0.4);
-  --color--article-text: #222222;
+  --color--articles-page-bg: var(--color--white);
+  --color--articles-hero-bg: var(--color--surface);
+  --color--articles-title-text: var(--color--black);
+  --color--articles-breadcrumb-text: var(--color--black);
+  --color--articles-breadcrumb-link: var(--color--black);
+  --color--articles-card-bg: var(--color--white);
+  --color--articles-card-border: var(--color--border);
+  --color--articles-card-title: var(--color--purple);
+  --color--articles-card-overlay: var(--color--overlay);
+  --color--article-text: var(--color--black);
 
   --font-size--articles-title: var(--font-size--title-hero);
   --font-size--articles-title-mobile: var(--font-size--title-hero-mobile);

@@ -33,22 +33,23 @@ defineProps({
 }
 
 .school-page__hero {
-  padding: var(--size--header-current-offset) var(--spacing--page-x) 56px;
+  padding: var(--size--header-current-offset) var(--spacing--page-x) var(--spacing--school-hero-y);
   background: var(--color--school-hero-bg);
-  text-align: center;
+  text-align: left;
 }
 
 .school-page__title {
   margin: 0 0 24px;
   color: var(--color--school-title-text);
   font-size: var(--font-size--school-page-title);
-  font-weight: 300;
+  font-weight: 700;
   line-height: var(--line-height--school-title);
 }
 
 .school-page__breadcrumbs {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 10px;
   margin: 0;
   color: var(--color--school-breadcrumb-text);
@@ -63,16 +64,19 @@ defineProps({
 
 @media (max-width: 900px) {
   .school-page__hero {
-    padding: var(--size--header-current-offset) var(--spacing--page-x-mobile) 40px;
+    padding: var(--size--header-current-offset) var(--spacing--page-x-mobile) var(--spacing--school-hero-y);
+    text-align: center;
   }
 
   .school-page__title {
     font-size: var(--font-size--school-page-title-mobile);
+    text-align: center;
   }
 
   .school-page__breadcrumbs {
     font-size: var(--font-size--school-breadcrumbs-mobile);
     gap: 6px;
+    justify-content: center;
   }
 }
 </style>

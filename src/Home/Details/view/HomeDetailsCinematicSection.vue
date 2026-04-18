@@ -105,10 +105,16 @@ onBeforeUnmount(() => {
 .home-details-cinematic {
   position: relative;
   overflow: hidden;
-  padding: 96px var(--spacing--page-x);
+  padding: var(--size--home-details-section-padding-y) var(--spacing--page-x);
   background:
-    linear-gradient(90deg, rgba(54, 19, 117, 0.94) 0%, rgba(76, 24, 139, 0.78) 34%, rgba(56, 17, 105, 0.22) 68%, rgba(48, 16, 96, 0.12) 100%),
-    radial-gradient(circle at 28% 18%, rgba(160, 86, 255, 0.42), transparent 38%),
+    linear-gradient(
+      90deg,
+      var(--color--home-details-cinematic-overlay-start) 0%,
+      var(--color--home-details-cinematic-overlay-middle) 34%,
+      var(--color--home-details-cinematic-overlay-end) 68%,
+      var(--color--home-details-cinematic-overlay-tail) 100%
+    ),
+    radial-gradient(circle at 28% 18%, var(--color--home-details-cinematic-glow), transparent 38%),
     linear-gradient(90deg, var(--color--home-details-cinematic-bg-start) 0%, var(--color--home-details-cinematic-bg-end) 100%);
 }
 
@@ -161,7 +167,11 @@ onBeforeUnmount(() => {
   inset: 0;
   background:
     var(--cinematic-background-image) 6% 40% / cover no-repeat,
-    linear-gradient(90deg, rgba(84, 43, 168, 0.15) 0%, rgba(84, 43, 168, 0) 100%);
+    linear-gradient(
+      90deg,
+      var(--color--home-details-cinematic-media-tint) 0%,
+      var(--color--home-details-cinematic-media-tint-transparent) 100%
+    );
   transform: translateY(calc(var(--cinematic-image-progress, 0) * 10%));
   will-change: transform;
   pointer-events: none;
@@ -186,10 +196,15 @@ onBeforeUnmount(() => {
 
 @media (max-width: 900px) {
   .home-details-cinematic {
-    padding: 72px var(--spacing--page-x-mobile);
+    padding: var(--size--home-details-section-padding-y-mobile) var(--spacing--page-x-mobile);
     background:
-      linear-gradient(180deg, rgba(54, 19, 117, 0.94) 0%, rgba(76, 24, 139, 0.74) 38%, rgba(56, 17, 105, 0.18) 100%),
-      radial-gradient(circle at 28% 18%, rgba(160, 86, 255, 0.42), transparent 38%),
+      linear-gradient(
+        180deg,
+        var(--color--home-details-cinematic-overlay-start) 0%,
+        var(--color--home-details-cinematic-overlay-middle-mobile) 38%,
+        var(--color--home-details-cinematic-overlay-end-mobile) 100%
+      ),
+      radial-gradient(circle at 28% 18%, var(--color--home-details-cinematic-glow), transparent 38%),
       linear-gradient(90deg, var(--color--home-details-cinematic-bg-start) 0%, var(--color--home-details-cinematic-bg-end) 100%);
   }
 

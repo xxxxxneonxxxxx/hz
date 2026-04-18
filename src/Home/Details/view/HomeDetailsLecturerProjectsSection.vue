@@ -141,7 +141,7 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .home-details-lecturer-projects {
-  padding: 96px var(--spacing--page-x) 110px;
+  padding: var(--size--home-details-section-padding-y) var(--spacing--page-x);
   background: var(--color--home-details-page-bg);
 }
 
@@ -152,12 +152,12 @@ onBeforeUnmount(() => {
 
 .home-details-lecturer-projects__title {
   max-width: 1200px;
-  margin: 0 auto 48px;
+  margin: 0 0 48px;
   color: var(--color--home-details-schedule-preview-title);
   font-size: var(--font-size--home-details-schedule-preview-title);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.18;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
 }
 
@@ -171,7 +171,7 @@ onBeforeUnmount(() => {
 
 .home-details-lecturer-projects__track {
   display: flex;
-  transition: transform 0.45s ease;
+  transition: transform var(--motion-duration-carousel) var(--motion-ease-carousel);
   will-change: transform;
 }
 
@@ -185,7 +185,7 @@ onBeforeUnmount(() => {
 
 .home-details-lecturer-projects__card {
   overflow: hidden;
-  background: #ddd;
+  background: var(--color--home-details-lecturer-projects-card-bg);
 }
 
 .home-details-lecturer-projects__image {
@@ -206,10 +206,11 @@ onBeforeUnmount(() => {
   height: 42px;
   padding: 0;
   border: 0;
-  background: rgba(33, 33, 37, 0.58);
-  color: #ffffff;
+  background: var(--color--home-details-lecturer-projects-nav-bg);
+  color: var(--color--home-details-lecturer-projects-nav-icon);
   transform: translateY(-50%);
   cursor: pointer;
+  transition: var(--motion-transition-surface), color var(--motion-duration-fast) var(--motion-ease-soft);
 }
 
 .home-details-lecturer-projects__nav--prev {
@@ -230,14 +231,19 @@ onBeforeUnmount(() => {
   fill: none;
 }
 
+.home-details-lecturer-projects__nav:hover {
+  background: rgba(0, 0, 0, 0.34);
+}
+
 @media (max-width: 900px) {
   .home-details-lecturer-projects {
-    padding: 72px var(--spacing--page-x-mobile) 80px;
+    padding: var(--size--home-details-section-padding-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .home-details-lecturer-projects__title {
     margin-bottom: 32px;
     font-size: var(--font-size--home-details-schedule-preview-title-mobile);
+    text-align: center;
   }
 
   .home-details-lecturer-projects__page {

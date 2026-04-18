@@ -19,18 +19,24 @@ defineProps({
 
 <style scoped>
 .AppConsultationForm{
-  padding: 72px var(--spacing--page-x) 96px;
+  padding:
+    var(--size--consultation-section-padding-y)
+    var(--spacing--page-x)
+    var(--size--consultation-section-padding-y);
   background: var(--color--consultation-form-bg);
 }
 
 .consultation-form__container {
-  max-width: 1080px;
+  max-width: none;
   margin: 0 auto;
 }
 
 @media (max-width: 900px) {
   .AppConsultationForm {
-    padding: 56px var(--spacing--page-x-mobile) 72px;
+    padding:
+      var(--size--consultation-section-padding-y-mobile)
+      var(--spacing--page-x-mobile)
+      var(--size--consultation-section-padding-y-mobile);
   }
 }
 </style>

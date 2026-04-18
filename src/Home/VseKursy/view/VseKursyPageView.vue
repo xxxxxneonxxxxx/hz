@@ -88,7 +88,7 @@ const isModalOpen = ref(false)
 
 <style scoped>
 .vse-kursy-page {
-  background: #ffffff;
+  background: var(--color--white);
 }
 
 .vse-kursy-page__container {
@@ -98,25 +98,26 @@ const isModalOpen = ref(false)
 }
 
 .vse-kursy-page__hero {
-  padding: var(--size--header-current-offset) var(--spacing--page-x) 64px;
-  background: #f5f5f7;
-  text-align: center;
+  padding: var(--size--header-current-offset) var(--spacing--page-x) var(--size--page-hero-padding-bottom);
+  background: var(--color--surface);
+  text-align: left;
 }
 
 .vse-kursy-page__title {
   margin: 0 0 24px;
-  color: #1d1d21;
+  color: var(--color--black);
   font-size: 76px;
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.04;
 }
 
 .vse-kursy-page__breadcrumbs {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 10px;
   margin: 0;
-  color: #27272d;
+  color: var(--color--black);
   font-size: 16px;
   line-height: 1.4;
 }
@@ -126,7 +127,7 @@ const isModalOpen = ref(false)
 }
 
 .vse-kursy-page__table-section {
-  padding: 72px var(--spacing--page-x) 96px;
+  padding: var(--size--page-section-padding-y) var(--spacing--page-x);
 }
 
 .vse-kursy-page__table-wrap {
@@ -136,20 +137,20 @@ const isModalOpen = ref(false)
 .vse-kursy-page__table {
   width: 100%;
   border-collapse: collapse;
-  background: #ffffff;
+  background: var(--color--white);
 }
 
 .vse-kursy-page__head,
 .vse-kursy-page__course-cell,
 .vse-kursy-page__description-cell {
-  border: 1px solid #d8d8dc;
+  border: 1px solid var(--color--border);
 }
 
 .vse-kursy-page__head {
   padding: 28px 28px 26px;
   text-align: left;
-  background: #f3f3f5;
-  color: #202027;
+  background: var(--color--surface);
+  color: var(--color--black);
   font-size: 24px;
   font-weight: 700;
 }
@@ -166,7 +167,7 @@ const isModalOpen = ref(false)
 
 .vse-kursy-page__course-link,
 .vse-kursy-page__course-text {
-  color: #9b6ad2;
+  color: var(--color--purple);
   font-size: 28px;
   line-height: 1.3;
   text-decoration: none;
@@ -174,9 +175,11 @@ const isModalOpen = ref(false)
 
 .vse-kursy-page__description {
   margin: 0;
-  color: #23232a;
+  color: var(--color--black);
   font-size: 22px;
   line-height: 1.7;
+  text-align: justify;
+  text-wrap: pretty;
 }
 
 .vse-kursy-page__action {
@@ -184,7 +187,7 @@ const isModalOpen = ref(false)
   padding: 0;
   border: 0;
   background: transparent;
-  color: #9b6ad2;
+  color: var(--color--purple);
   font-size: 20px;
   font-weight: 700;
   cursor: pointer;
@@ -192,20 +195,23 @@ const isModalOpen = ref(false)
 
 @media (max-width: 900px) {
   .vse-kursy-page__hero {
-    padding: var(--size--header-current-offset) var(--spacing--page-x-mobile) 40px;
+    padding: var(--size--header-current-offset) var(--spacing--page-x-mobile) var(--size--page-hero-padding-bottom-mobile);
+    text-align: center;
   }
 
   .vse-kursy-page__table-section {
-    padding: 40px var(--spacing--page-x-mobile) 72px;
+    padding: var(--size--page-section-padding-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .vse-kursy-page__title {
     font-size: 44px;
+    text-align: center;
   }
 
   .vse-kursy-page__breadcrumbs {
     gap: 6px;
     font-size: 14px;
+    justify-content: center;
   }
 
   .vse-kursy-page__head {
@@ -225,6 +231,7 @@ const isModalOpen = ref(false)
 
   .vse-kursy-page__description {
     font-size: 18px;
+    text-align: left;
   }
 
   .vse-kursy-page__action {

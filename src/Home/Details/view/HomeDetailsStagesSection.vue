@@ -68,7 +68,7 @@ defineProps({
 
 <style scoped>
 .home-details-stages {
-  padding: 96px var(--spacing--page-x) 110px;
+  padding: var(--size--home-details-section-padding-y) var(--spacing--page-x);
   background: var(--color--home-details-stages-bg);
 }
 
@@ -169,7 +169,7 @@ defineProps({
 
 @media (max-width: 900px) {
   .home-details-stages {
-    padding: 72px var(--spacing--page-x-mobile) 80px;
+    padding: var(--size--home-details-section-padding-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .home-details-stages__step + .home-details-stages__step {

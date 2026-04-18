@@ -114,24 +114,27 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .lecturerSection {
-  padding: 80px var(--spacing--page-x) 96px;
+  padding:
+    var(--size--home-lecturers-padding-y)
+    var(--spacing--page-x)
+    var(--size--home-lecturers-padding-y);
   background: var(--color--home-lecturers-bg);
 }
 
 .lecturers-section__container {
-  max-width: 1460px;
+  max-width: var(--size--home-lecturers-container-max);
   margin: 0 auto;
 }
 
 .lecturers-section__head {
-  margin-bottom: 52px;
+  margin-bottom: var(--size--home-lecturers-head-offset);
 }
 
 .lecturers-section__title {
   margin: 0 0 22px;
   color: var(--color--home-lecturers-title-text);
   font-size: var(--font-size--home-lecturers-title);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.08;
   text-transform: uppercase;
 }
@@ -141,6 +144,8 @@ onBeforeUnmount(() => {
   color: var(--color--home-lecturers-description-text);
   font-size: var(--font-size--home-lecturers-description);
   line-height: 1.4;
+  text-align: justify;
+  text-wrap: pretty;
 }
 
 .lecturers-section__carousel {
@@ -162,6 +167,7 @@ onBeforeUnmount(() => {
   color: var(--color--home-lecturers-nav-icon);
   transform: translateY(-50%);
   cursor: pointer;
+  transition: var(--motion-transition-surface), color var(--motion-duration-fast) var(--motion-ease-soft);
 }
 
 .lecturers-section__nav-button--prev {
@@ -188,9 +194,13 @@ onBeforeUnmount(() => {
 
 .lecturers-section__track {
   display: flex;
-  gap: 36px;
-  transition: transform 0.35s ease;
+  gap: var(--size--home-lecturers-track-gap);
+  transition: transform var(--motion-duration-carousel) var(--motion-ease-carousel);
   will-change: transform;
+}
+
+.lecturers-section__nav-button:hover {
+  background: rgba(0, 0, 0, 0.34);
 }
 
 .lecturer-card {
@@ -200,7 +210,7 @@ onBeforeUnmount(() => {
 
 .lecturer-card__image-wrap {
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: var(--size--home-lecturers-card-radius);
   aspect-ratio: 0.78 / 1;
   background: var(--color--home-lecturers-card-bg);
 }
@@ -228,22 +238,27 @@ onBeforeUnmount(() => {
 
 @media (max-width: 900px) {
   .lecturers-section {
-    padding: 64px var(--spacing--page-x-mobile) 72px;
+    padding:
+      var(--size--home-lecturers-padding-y-mobile)
+      var(--spacing--page-x-mobile)
+      var(--size--home-lecturers-padding-y-mobile);
   }
 
   .lecturers-section__head {
-    margin-bottom: 36px;
+    margin-bottom: var(--size--home-lecturers-head-offset-mobile);
   }
 
   .lecturers-section__title {
     font-size: var(--font-size--home-lecturers-title-mobile);
+    text-align: center;
   }
 
   .lecturers-section__description {
     font-size: var(--font-size--home-lecturers-description-mobile);
+    text-align: left;
   }
 
-  .lecturers-section__track { gap: 18px; }
+  .lecturers-section__track { gap: var(--size--home-lecturers-track-gap-tablet); }
 
   .lecturer-card { flex-basis: calc((100% - 36px) / 3); }
 
@@ -256,7 +271,7 @@ onBeforeUnmount(() => {
   }
 
   .lecturer-card__image-wrap {
-    border-radius: 20px;
+    border-radius: var(--size--home-lecturers-card-radius-tablet);
   }
 
   .lecturer-card__name {
@@ -271,7 +286,7 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 700px) {
-  .lecturers-section__track { gap: 12px; }
+  .lecturers-section__track { gap: var(--size--home-lecturers-track-gap-mobile); }
 
   .lecturer-card { flex-basis: calc((100% - 24px) / 3); }
 
@@ -284,7 +299,7 @@ onBeforeUnmount(() => {
   }
 
   .lecturer-card__image-wrap {
-    border-radius: 14px;
+    border-radius: var(--size--home-lecturers-card-radius-mobile);
     aspect-ratio: 0.72 / 1;
   }
 

@@ -1,26 +1,26 @@
 :root {
-  --color--school-page-bg: #f3f3f5;
-  --color--school-hero-bg: #ececef;
-  --color--school-accent-bg: #8f21c9;
+  --color--school-page-bg: var(--color--surface);
+  --color--school-hero-bg: var(--color--surface);
+  --color--school-accent-bg: var(--color--purple);
 
-  --color--school-title-text: #111111;
-  --color--school-text: #222222;
-  --color--school-text-on-accent: #ffffff;
-  --color--school-breadcrumb-text: #222222;
-  --color--school-breadcrumb-link: #222222;
-  --color--school-section-title: #111111;
-  --color--school-recognition-title: #1d1d21;
-  --color--school-recognition-name: #8f21c9;
-  --color--school-recognition-link: #ff5a00;
-  --color--school-recognition-preview-link: #9a77cc;
-  --color--school-wins-title: #1d1d21;
-  --color--school-wins-text: #222222;
-  --color--school-wins-value: #8f21c9;
-  --color--school-pitchings-title: #1d1d21;
-  --color--school-pitchings-text: #222222;
-  --color--school-pitchings-link: #9a77cc;
-  --color--school-pitchings-note-bg: #f4f4fb;
-  --color--school-pitchings-note-border: #8f21c9;
+  --color--school-title-text: var(--color--black);
+  --color--school-text: var(--color--black);
+  --color--school-text-on-accent: var(--color--white);
+  --color--school-breadcrumb-text: var(--color--black);
+  --color--school-breadcrumb-link: var(--color--black);
+  --color--school-section-title: var(--color--black);
+  --color--school-recognition-title: var(--color--black);
+  --color--school-recognition-name: var(--color--purple);
+  --color--school-recognition-link: var(--color--purple);
+  --color--school-recognition-preview-link: var(--color--purple);
+  --color--school-wins-title: var(--color--black);
+  --color--school-wins-text: var(--color--black);
+  --color--school-wins-value: var(--color--purple);
+  --color--school-pitchings-title: var(--color--black);
+  --color--school-pitchings-text: var(--color--black);
+  --color--school-pitchings-link: var(--color--purple);
+  --color--school-pitchings-note-bg: var(--color--surface);
+  --color--school-pitchings-note-border: var(--color--purple);
 
   --font-size--school-page-title: var(--font-size--title-hero);
   --font-size--school-page-title-mobile: var(--font-size--title-hero-mobile);
@@ -53,9 +53,9 @@
   --line-height--school-title: 1.05;
   --line-height--school-text: 1.55;
 
-  --spacing--school-hero-y: 84px;
-  --spacing--school-section-y: 72px;
-  --spacing--school-section-y-mobile: 48px;
+  --spacing--school-hero-y: 56px;
+  --spacing--school-section-y: 56px;
+  --spacing--school-section-y-mobile: 56px;
 
   --radius--school-image: 0px;
   --size--school-container: 1460px;

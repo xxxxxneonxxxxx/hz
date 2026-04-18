@@ -15,15 +15,11 @@
     </header>
 
     <section class="faculties-page__programs">
-      <div class="faculties-page__container">
-        <ProgramCardsSection :cards="HOME_PROGRAM_CARDS" />
-      </div>
+      <ProgramCardsSection :cards="HOME_PROGRAM_CARDS" />
     </section>
 
     <section class="faculties-page__form">
-      <div class="faculties-page__container">
-        <AppConsultationForm :section="HOME_CONSULTATION_FORM" />
-      </div>
+      <AppConsultationForm :section="HOME_CONSULTATION_FORM" />
     </section>
   </section>
 </template>
@@ -50,22 +46,23 @@ import AppConsultationForm from '../../ConsultationFormSection/view/Consultation
 }
 
 .faculties-page__hero {
-  padding: var(--size--header-current-offset) var(--spacing--page-x) 64px;
+  padding: var(--size--header-current-offset) var(--spacing--page-x) var(--size--page-hero-padding-bottom);
   background: var(--color--faculties-hero-bg, #f3f3f5);
-  text-align: center;
+  text-align: left;
 }
 
 .faculties-page__title {
   margin: 0 0 24px;
   color: var(--color--faculties-title-text, #111);
   font-size: var(--font-size--faculties-title, 72px);
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1.05;
 }
 
 .faculties-page__breadcrumbs {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 10px;
   margin: 0;
   color: var(--color--faculties-breadcrumb-text, #2b2b2b);
@@ -84,33 +81,36 @@ import AppConsultationForm from '../../ConsultationFormSection/view/Consultation
 }
 
 .faculties-page__programs {
-  padding: 24px var(--spacing--page-x) 56px;
+  padding: 0;
 }
 
 .faculties-page__form {
-  padding: 0 var(--spacing--page-x) 96px;
+  padding: 0;
 }
 
 @media (max-width: 900px) {
   .faculties-page__hero {
-    padding: var(--size--header-current-offset) var(--spacing--page-x-mobile) 40px;
+    padding: var(--size--header-current-offset) var(--spacing--page-x-mobile) var(--size--page-hero-padding-bottom-mobile);
+    text-align: center;
   }
 
   .faculties-page__programs {
-    padding: 16px var(--spacing--page-x-mobile) 40px;
+    padding: 0;
   }
 
   .faculties-page__form {
-    padding: 0 var(--spacing--page-x-mobile) 72px;
+    padding: 0;
   }
 
   .faculties-page__title {
     font-size: var(--font-size--faculties-title-mobile, 42px);
+    text-align: center;
   }
 
   .faculties-page__breadcrumbs {
     gap: 6px;
     font-size: var(--font-size--faculties-breadcrumbs-mobile, 14px);
+    justify-content: center;
   }
 }
 </style>

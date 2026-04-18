@@ -45,7 +45,7 @@ defineProps({
 
 <style scoped>
 .pitchings {
-  padding: 56px var(--spacing--page-x) 72px;
+  padding: var(--spacing--school-section-y) var(--spacing--page-x);
   background: var(--color--school-page-bg);
 }
 
@@ -58,9 +58,9 @@ defineProps({
   margin: 0 0 36px;
   color: var(--color--school-pitchings-title);
   font-size: var(--font-size--school-pitchings-title);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.08;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
 }
 
@@ -75,6 +75,8 @@ defineProps({
   color: var(--color--school-pitchings-text);
   font-size: var(--font-size--school-pitchings-text);
   line-height: 1.5;
+  text-align: justify;
+  text-wrap: pretty;
 }
 
 .pitchings__text strong {
@@ -98,20 +100,24 @@ defineProps({
   color: var(--color--school-pitchings-text);
   font-size: var(--font-size--school-pitchings-text);
   line-height: 1.5;
+  text-align: justify;
+  text-wrap: pretty;
 }
 
 @media (max-width: 900px) {
   .pitchings {
-    padding: 40px var(--spacing--page-x-mobile) 56px;
+    padding: var(--spacing--school-section-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .pitchings__title {
     font-size: var(--font-size--school-pitchings-title-mobile);
+    text-align: center;
   }
 
   .pitchings__text,
   .pitchings__note-text {
     font-size: var(--font-size--school-pitchings-text-mobile);
+    text-align: left;
   }
 
   .pitchings__content {

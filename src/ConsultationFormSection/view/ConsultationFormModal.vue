@@ -97,7 +97,7 @@ onBeforeUnmount(() => {
   padding: 44px 40px 40px;
   border-radius: 28px;
   background: var(--color--consultation-form-modal-surface);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 24px 80px var(--color--shadow);
 }
 
 .consultation-modal__close {

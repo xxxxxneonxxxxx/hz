@@ -47,9 +47,13 @@ defineProps({
 
 <style scoped>
 .home-details-why-us {
-  padding: 88px var(--spacing--page-x) 104px;
-  background: linear-gradient(180deg, #8f27c6 0%, #9327c9 100%);
-  color: #ffffff;
+  padding: var(--size--home-details-section-padding-y) var(--spacing--page-x);
+  background: linear-gradient(
+    180deg,
+    var(--color--home-details-why-us-bg-start) 0%,
+    var(--color--home-details-why-us-bg-end) 100%
+  );
+  color: var(--color--home-details-why-us-text);
 }
 
 .home-details-why-us__container {
@@ -60,18 +64,19 @@ defineProps({
 .home-details-why-us__title {
   margin: 0;
   font-size: 56px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.05;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
 }
 
 .home-details-why-us__subtitle {
   max-width: 980px;
-  margin: 28px auto 64px;
+  margin: 28px 0 64px;
   font-size: 30px;
   line-height: 1.35;
-  text-align: center;
+  text-align: justify;
+  text-wrap: pretty;
 }
 
 .home-details-why-us__grid {
@@ -108,7 +113,7 @@ defineProps({
 .home-details-why-us__card-title {
   margin: 0 0 20px;
   font-size: 34px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.12;
   text-transform: uppercase;
 }
@@ -132,16 +137,18 @@ defineProps({
 
 @media (max-width: 900px) {
   .home-details-why-us {
-    padding: 64px var(--spacing--page-x-mobile) 72px;
+    padding: var(--size--home-details-section-padding-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .home-details-why-us__title {
     font-size: 38px;
+    text-align: center;
   }
 
   .home-details-why-us__subtitle {
     margin: 20px auto 40px;
     font-size: 24px;
+    text-align: left;
   }
 
   .home-details-why-us__card-title {

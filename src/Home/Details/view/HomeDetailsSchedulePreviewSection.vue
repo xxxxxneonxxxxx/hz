@@ -27,7 +27,7 @@ defineProps({
 
 <style scoped>
 .home-details-schedule-preview {
-  padding: 96px var(--spacing--page-x) 110px;
+  padding: var(--size--home-details-section-padding-y) var(--spacing--page-x);
   background: var(--color--home-details-schedule-preview-bg);
 }
 
@@ -40,9 +40,9 @@ defineProps({
   margin: 0 0 40px;
   color: var(--color--home-details-schedule-preview-title);
   font-size: var(--font-size--home-details-schedule-preview-title);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.08;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
 }
 
@@ -59,12 +59,13 @@ defineProps({
 
 @media (max-width: 900px) {
   .home-details-schedule-preview {
-    padding: 72px var(--spacing--page-x-mobile) 80px;
+    padding: var(--size--home-details-section-padding-y-mobile) var(--spacing--page-x-mobile);
   }
 
   .home-details-schedule-preview__title {
     margin-bottom: 24px;
     font-size: var(--font-size--home-details-schedule-preview-title-mobile);
+    text-align: center;
   }
 }
 </style>

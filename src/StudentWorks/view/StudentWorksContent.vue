@@ -1,97 +1,61 @@
 <template>
-  <section class="student-works-page">
-    <div class="student-works-page__content">
-      <section
-        v-for="(section, index) in page.sections"
-        :key="section.id"
-        class="student-works-page__section"
-      >
-        <div class="student-works-page__container">
-          <h2
-            v-if="index === 0 || index === 1"
-            class="student-works-page__section-title"
-          >
-            {{ index === 0 ? section.title : 'Короткометражные фильмы' }}
-          </h2>
+  <section class="student-works-content">
+    <div class="student-works-content__container">
+      <div class="student-works-content__header">
+        <h2 class="student-works-content__title">Подборка работ</h2>
+        <p class="student-works-content__lead">
+          Небольшая витрина учебных и итоговых проектов студентов: короткометражные фильмы,
+          тизеры, документальные и жанровые сцены.
+        </p>
+      </div>
 
-          <p
-            v-if="index === 0 && section.paragraphs[0]"
-            class="student-works-page__section-text student-works-page__section-text--lead"
-          >
-            {{ section.paragraphs[0] }}
-          </p>
+      <div class="student-works-content__grid">
+        <article
+          v-for="section in page.sections"
+          :key="section.id"
+          class="student-works-content__card"
+        >
+          <div class="student-works-content__media">
+            <iframe
+              v-if="section.embedUrl"
+              :src="section.embedUrl"
+              :title="section.videoTitle"
+              class="student-works-content__iframe"
+              allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+              allowfullscreen
+            />
 
-          <div
-            :class="[
-              'student-works-page__section-layout',
-              { 'student-works-page__section-layout--aligned': index > 0 },
-            ]"
-          >
-            <div
-              :class="[
-                'student-works-page__section-copy',
-                { 'student-works-page__section-copy--aligned': index > 0 },
-              ]"
-            >
-              <p
-                v-for="paragraph in getCopyParagraphs(section, index)"
-                :key="paragraph"
-                class="student-works-page__section-text"
+            <div v-else class="student-works-content__video-placeholder">
+              <div class="student-works-content__vk-badge">VK</div>
+              <p class="student-works-content__video-title">{{ section.videoTitle }}</p>
+              <a
+                :href="section.fallbackUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="student-works-content__video-link"
               >
-                {{ paragraph }}
-              </p>
-            </div>
-
-            <div
-              :class="[
-                'student-works-page__media',
-                { 'student-works-page__media--aligned': index > 0 },
-              ]"
-            >
-              <p
-                :class="[
-                  'student-works-page__media-caption',
-                  { 'student-works-page__media-caption--aligned': index > 0 },
-                ]"
-              >
-                {{ section.subtitle }}
-              </p>
-
-              <p
-                v-if="getMediaMeta(section, index)"
-                class="student-works-page__media-meta"
-              >
-                {{ getMediaMeta(section, index) }}
-              </p>
-
-              <iframe
-                v-if="section.embedUrl"
-                :src="section.embedUrl"
-                :title="section.videoTitle"
-                class="student-works-page__iframe"
-                allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-                allowfullscreen
-              />
-
-              <div v-else class="student-works-page__video-placeholder">
-                <div class="student-works-page__vk-badge">VK</div>
-                <p class="student-works-page__video-title">{{ section.videoTitle }}</p>
-                <p class="student-works-page__video-text">
-                  Здесь будет embed-плеер. Пока оставил заглушку-ссылку на VK Video.
-                </p>
-                <a
-                  :href="section.fallbackUrl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="student-works-page__video-link"
-                >
-                  Открыть видео
-                </a>
-              </div>
+                Открыть видео
+              </a>
             </div>
           </div>
-        </div>
-      </section>
+
+          <div class="student-works-content__body">
+            <p class="student-works-content__eyebrow">{{ section.title }}</p>
+            <h3 class="student-works-content__card-title">{{ section.subtitle }}</h3>
+
+            <p
+              v-if="getMediaMeta(section)"
+              class="student-works-content__meta"
+            >
+              {{ getMediaMeta(section) }}
+            </p>
+
+            <p class="student-works-content__text">
+              {{ getPreviewText(section) }}
+            </p>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 </template>
@@ -101,177 +65,115 @@ import { STUDENT_WORKS_PAGE as page } from '../config/studentWorks.config.js'
 
 const isMetaParagraph = (paragraph) => paragraph?.startsWith('Режиссёр:')
 
-const getCopyParagraphs = (section, index) => {
-  const paragraphs = section.paragraphs.slice(1)
-
-  if (index > 0 && isMetaParagraph(paragraphs[0])) {
-    return paragraphs.slice(1)
-  }
-
-  return paragraphs
-}
-
-const getMediaMeta = (section, index) => {
-  if (index === 0) return ''
-
-  const metaParagraph = section.paragraphs.slice(1).find(isMetaParagraph)
+const getMediaMeta = (section) => {
+  const metaParagraph = section.paragraphs.find(isMetaParagraph)
   return metaParagraph ?? ''
 }
+
+const getPreviewText = (section) =>
+  section.paragraphs.find((paragraph) => paragraph && !isMetaParagraph(paragraph)) ?? ''
 </script>
 
 <style scoped>
-.student-works-page {
+.student-works-content {
+  padding: var(--size--page-section-padding-y) var(--spacing--page-x);
   background: var(--color--student-works-page-bg);
 }
 
-.student-works-page__content {
-  display: flex;
-  flex-direction: column;
-}
-
-.student-works-page__container {
+.student-works-content__container {
   max-width: 1460px;
   margin: 0 auto;
 }
 
-.student-works-page__section {
-  padding: 24px var(--spacing--page-x) 68px;
+.student-works-content__header {
+  max-width: 900px;
+  margin: 0 0 40px;
+  text-align: left;
 }
 
-.student-works-page__section-title {
-  margin: 0 0 18px;
+.student-works-content__title {
+  margin: 0 0 14px;
   color: var(--color--student-works-section-title-text);
   font-size: var(--font-size--student-works-section-title);
-  font-weight: 500;
-  line-height: 1.1;
+  font-weight: 700;
+  line-height: 1.06;
   text-transform: uppercase;
-  text-align: center;
 }
 
-.student-works-page__section-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
-  gap: 48px;
-  align-items: start;
-}
-
-.student-works-page__section-layout--aligned {
-  align-items: center;
-}
-
-.student-works-page__section-copy {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0 auto;
-  max-width: 760px;
-}
-
-.student-works-page__section-copy--aligned {
-  justify-content: center;
-}
-
-.student-works-page__section-text {
-  width: 100%;
-  margin: 0 0 22px;
+.student-works-content__lead {
+  margin: 0;
   color: var(--color--student-works-text);
   font-size: var(--font-size--student-works-text);
   line-height: 1.45;
-  text-align: left;
+  text-align: justify;
+  text-wrap: pretty;
 }
 
-.student-works-page__section-text--lead {
-  max-width: 1240px;
-  margin: 0 auto 28px;
+.student-works-content__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
 }
 
-.student-works-page__media {
+.student-works-content__card {
+  overflow: hidden;
+  background: var(--color--white);
+  border: 1px solid var(--color--border);
+}
+
+.student-works-content__media {
   width: 100%;
 }
 
-.student-works-page__media--aligned {
-  display: flex;
-  flex-direction: column;
-}
-
-.student-works-page__media-caption {
-  margin: 0 0 16px;
-  color: var(--color--student-works-media-caption);
-  font-size: var(--font-size--student-works-media-caption);
-  line-height: 1.35;
-  text-align: center;
-}
-
-.student-works-page__media-caption--aligned {
-  margin-bottom: 4px;
-  text-align: left;
-}
-
-.student-works-page__media-meta {
-  margin: 0 0 18px;
-  color: var(--color--student-works-media-caption);
-  font-size: var(--font-size--student-works-media-caption);
-  line-height: 1.35;
-  text-align: left;
-}
-
-.student-works-page__iframe,
-.student-works-page__video-placeholder {
+.student-works-content__iframe,
+.student-works-content__video-placeholder {
   width: 100%;
-  aspect-ratio: 1.18 / 1;
+  aspect-ratio: 16 / 10;
 }
 
-.student-works-page__iframe {
+.student-works-content__iframe {
   border: 0;
 }
 
-.student-works-page__video-placeholder {
+.student-works-content__video-placeholder {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 18px;
-  padding: 32px;
+  gap: 16px;
+  padding: 24px;
   background: var(--color--student-works-video-bg);
   color: var(--color--student-works-video-text);
   text-align: center;
 }
 
-.student-works-page__vk-badge {
+.student-works-content__vk-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 84px;
-  height: 84px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   background: var(--color--student-works-vk-badge-bg);
   color: var(--color--student-works-vk-badge-text);
-  font-size: var(--font-size--student-works-video-badge);
+  font-size: 26px;
   font-weight: 700;
 }
 
-.student-works-page__video-title {
+.student-works-content__video-title {
   margin: 0;
-  font-size: var(--font-size--student-works-video-title);
+  font-size: 24px;
   font-weight: 700;
 }
 
-.student-works-page__video-text {
-  max-width: 420px;
-  margin: 0;
-  color: var(--color--student-works-video-muted);
-  font-size: var(--font-size--student-works-video-text);
-  line-height: 1.5;
-}
-
-.student-works-page__video-link {
+.student-works-content__video-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 240px;
-  min-height: 60px;
-  padding: 0 24px;
-  border-radius: 14px;
+  min-width: 220px;
+  min-height: 54px;
+  padding: 0 22px;
+  border-radius: 12px;
   background: var(--color--student-works-video-link-bg);
   color: var(--color--student-works-video-link-text);
   text-decoration: none;
@@ -279,29 +181,81 @@ const getMediaMeta = (section, index) => {
   font-weight: 700;
 }
 
+.student-works-content__body {
+  padding: 24px 24px 26px;
+}
+
+.student-works-content__eyebrow {
+  margin: 0 0 10px;
+  color: var(--color--student-works-media-caption);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.student-works-content__card-title {
+  margin: 0 0 12px;
+  color: var(--color--student-works-section-title-text);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.student-works-content__meta {
+  margin: 0 0 12px;
+  color: var(--color--student-works-media-caption);
+  font-size: var(--font-size--student-works-media-caption);
+  line-height: 1.35;
+}
+
+.student-works-content__text {
+  margin: 0;
+  color: var(--color--student-works-text);
+  font-size: var(--font-size--student-works-text);
+  line-height: 1.45;
+}
+
 @media (max-width: 1100px) {
-  .student-works-page__section-layout {
+  .student-works-content__grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 900px) {
-  .student-works-page__section {
-    padding-left: var(--spacing--page-x-mobile);
-    padding-right: var(--spacing--page-x-mobile);
+  .student-works-content {
+    padding: var(--size--page-section-padding-y-mobile) var(--spacing--page-x-mobile);
   }
 
-  .student-works-page__section-title {
+  .student-works-content__header {
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .student-works-content__lead {
+    text-align: left;
+  }
+
+  .student-works-content__title {
     font-size: var(--font-size--student-works-section-title-mobile);
   }
 
-  .student-works-page__section-text {
+  .student-works-content__lead,
+  .student-works-content__text {
     font-size: var(--font-size--student-works-text-mobile);
+    margin-bottom: 28px;
   }
 
-  .student-works-page__media-caption,
-  .student-works-page__media-meta {
+  .student-works-content__card-title {
+    font-size: 24px;
+  }
+
+  .student-works-content__meta {
     font-size: var(--font-size--student-works-media-caption-mobile);
+  }
+
+  .student-works-content__body {
+    padding: 20px 18px 22px;
   }
 }
 </style>
