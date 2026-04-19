@@ -5,12 +5,23 @@
     --motion-duration-slow: 0.42s;
     --motion-duration-hero: 0.56s;
     --motion-duration-carousel: 1.5s;
+    --motion-duration-menu-enter: 2s;
+    --motion-duration-menu-leave: 0.75s;
+    --motion-duration-menu-fade-enter: 0.5s;
+    --motion-duration-menu-fade-leave: 0.5s;
+    --motion-duration-menu-surface: 0.42s;
 
     /* Единые кривые движения */
     --motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
     --motion-ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
     --motion-ease-emphasis: cubic-bezier(0.2, 0.8, 0.2, 1);
     --motion-ease-carousel: cubic-bezier(0.16, 1, 0.3, 1);
+    --motion-ease-menu-enter: cubic-bezier(0.22, 1, 0.36, 1);
+    --motion-ease-menu-leave: cubic-bezier(0.4, 0, 1, 1);
+    --motion-ease-menu-surface: cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* Параметры анимации мобильного меню */
+    --motion-menu-max-height: 520px;
 
     /* Типовые переходы интерфейса */
     --motion-transition-color:
@@ -34,5 +45,10 @@
         --motion-duration-slow: 0.01ms;
         --motion-duration-hero: 0.01ms;
         --motion-duration-carousel: 0.01ms;
+        --motion-duration-menu-enter: 0.01ms;
+        --motion-duration-menu-leave: 0.01ms;
+        --motion-duration-menu-fade-enter: 0.01ms;
+        --motion-duration-menu-fade-leave: 0.01ms;
+        --motion-duration-menu-surface: 0.01ms;
     }
 }

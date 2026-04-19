@@ -55,7 +55,15 @@
     </div>
 
     <!-- Мобильное меню -->
-    <Transition name="mobile-menu">
+    <Transition
+      name="mobile-menu"
+      @before-enter="emit('menu-transition-start')"
+      @after-enter="emit('menu-transition-end')"
+      @enter-cancelled="emit('menu-transition-end')"
+      @before-leave="emit('menu-transition-start')"
+      @after-leave="emit('menu-transition-end')"
+      @leave-cancelled="emit('menu-transition-end')"
+    >
       <div v-if="isMenuOpen" class="navbar__mobile-menu">
         <ul class="navbar__mobile-nav">
           <li v-for="link in navLinks" :key="link.id">
@@ -88,7 +96,12 @@ const props = defineProps({
   isScrolled: { type: Boolean, default: false },
 })
 
-defineEmits(['toggleMenu', 'closeMenu'])
+const emit = defineEmits([
+  'toggleMenu',
+  'closeMenu',
+  'menu-transition-start',
+  'menu-transition-end',
+])
 const route = useRoute()
 
 function isActive(href) {
@@ -110,6 +123,12 @@ function isInternalLink(href) {
   position: relative;
   z-index: 1100;
   transition: box-shadow var(--motion-duration-base) var(--motion-ease-standard), background-color var(--motion-duration-base) var(--motion-ease-soft);
+}
+
+.navbar--menu-open {
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  overflow: hidden;
 }
 .navbar--scrolled {
   --nav-height: var(--size--header-navbar-height-scrolled);
@@ -215,11 +234,13 @@ function isInternalLink(href) {
   border-top: 1px solid var(--border);
   background: var(--color--header-navbar);
   overflow: hidden;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
+  will-change: max-height, opacity;
 }
 .navbar__mobile-nav {
   list-style: none;
   margin: 0;
-  padding: 8px 0 0;
+  padding: 8px 0 10px;
 }
 .navbar__mobile-link {
   display: block;
@@ -237,16 +258,36 @@ function isInternalLink(href) {
   transform: translateX(4px);
 }
 
-.mobile-menu-enter-active,
+.navbar__mobile-nav li:last-child .navbar__mobile-link {
+  border-bottom: 0;
+}
+
+
+.mobile-menu-enter-active {
+  transition:
+    max-height var(--motion-duration-menu-enter) var(--motion-ease-menu-enter),
+    opacity var(--motion-duration-menu-fade-enter) var(--motion-ease-menu-enter),
+    box-shadow var(--motion-duration-menu-enter) var(--motion-ease-menu-enter);
+}
+
 .mobile-menu-leave-active {
   transition:
-    opacity var(--motion-duration-base) var(--motion-ease-soft),
-    transform var(--motion-duration-base) var(--motion-ease-standard);
+    max-height var(--motion-duration-menu-leave) var(--motion-ease-menu-leave),
+    opacity var(--motion-duration-menu-fade-leave) var(--motion-ease-menu-leave),
+    box-shadow var(--motion-duration-menu-leave) var(--motion-ease-menu-leave);
 }
 .mobile-menu-enter-from,
 .mobile-menu-leave-to {
+  max-height: 0;
   opacity: 0;
-  transform: translateY(-10px);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.mobile-menu-enter-to,
+.mobile-menu-leave-from {
+  max-height: var(--motion-menu-max-height);
+  opacity: 1;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
 }
 
 @media (max-width: 960px) {

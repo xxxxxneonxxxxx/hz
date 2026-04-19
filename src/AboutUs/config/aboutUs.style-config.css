@@ -53,9 +53,9 @@
   --line-height--school-title: 1.05;
   --line-height--school-text: 1.55;
 
-  --spacing--school-hero-y: 56px;
-  --spacing--school-section-y: 56px;
-  --spacing--school-section-y-mobile: 56px;
+  --spacing--school-hero-y: var(--spacing--section-y);
+  --spacing--school-section-y: var(--spacing--section-y);
+  --spacing--school-section-y-mobile: var(--spacing--section-y-mobile);
 
   --radius--school-image: 0px;
   --size--school-container: 1460px;

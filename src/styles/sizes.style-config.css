@@ -2,8 +2,8 @@
     /* Глобальные отступы страницы */
     --spacing--page-x: 50px;
     --spacing--page-x-mobile: 24px;
-    --spacing--section-y: 56px;
-    --spacing--section-y-mobile: 40px;
+    --spacing--section-y: 35px;
+    --spacing--section-y-mobile: 20px;
     --size--page-hero-padding-bottom: var(--spacing--section-y);
     --size--page-hero-padding-bottom-mobile: var(--spacing--section-y-mobile);
     --size--page-section-padding-y: var(--spacing--section-y);

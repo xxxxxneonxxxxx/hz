@@ -153,6 +153,7 @@ async function submitForm() {
   min-height: 86px;
   padding: 0 28px;
   border: 1px solid var(--color--consultation-form-input-border);
+  border-radius: 18px;
   background: var(--color--consultation-form-input-bg);
   color: var(--color--consultation-form-input-text);
   font-size: var(--font-size--consultation-form-input);
